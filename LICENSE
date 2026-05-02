@@ -1,0 +1,157 @@
+Glance - 최종 사용자 라이선스 계약 (EULA)
+Glance - End User License Agreement
+
+Copyright (c) 2026 onmcore. All rights reserved.
+
+소프트웨어는 판매되는 것이 아니라 사용이 허락(license)되는 것이며, 라이선서는
+명시적으로 부여하지 않은 모든 권리를 보유합니다. The Software is licensed, not
+sold; the Licensor reserves all rights not expressly granted.
+
+
+================================================================
+[한국어] - 본 계약의 정본(authoritative)
+================================================================
+
+본 계약은 Glance(이하 "소프트웨어")의 저작권자(이하 "라이선서")와 소프트웨어를
+사용하는 개인 또는 법인(이하 "사용자") 사이의 법적 계약입니다. 소프트웨어를
+설치·실행·사용함으로써 사용자는 본 계약에 동의하는 것으로 간주됩니다.
+
+1. 정의
+   - 개인·비상업적 사용: 개인이 사적 용도로, 또는 학습·평가·연구·비영리
+     목적으로 소프트웨어를 사용하는 것.
+   - 상업적 사용: 영리 기업·법인·기관·단체가 업무 또는 수익 창출 활동의
+     일부로 소프트웨어를 사용하는 것. 사업자의 업무에 사용되는 경우, 조직
+     규모(직원 수·매출 등)와 무관하게 상업적 사용에 해당합니다.
+
+2. 개인·비상업적 사용 (무료)
+   개인·비상업적 사용에 한하여 소프트웨어를 무료로 설치·사용할 수 있습니다.
+   라이선스 키나 결제가 필요하지 않습니다. 소프트웨어가 유용하다면 자발적인
+   후원(donation)을 통한 지원을 환영하나, 전적으로 선택 사항이며 어떤 기능도
+   후원 여부로 제한되지 않습니다.
+
+3. 상업적 사용 (유료)
+   상업적 사용에는 별도의 유료 상업용 라이선스가 필요합니다.
+   문의: glance@onmcore.com
+   현재 빌드에는 상업적 사용을 막는 기술적 제한(게이팅)이 없습니다. 상업용
+   라이선스 요건은 정책에 의한 것이며 사용자의 준수에 기반합니다. (향후
+   빌드에서 라이선스 검증이 도입될 수 있습니다.)
+
+4. 허용
+   - 임의의 수의 기기에 개인·비상업적 용도로 설치·사용.
+   - 원본 그대로의(무수정) 설치본 또는 바이너리를, 본 고지 및 함께 제공되는
+     THIRD_PARTY_LICENSES 를 포함하여 재배포하는 것. (재판매·유상 제공 제외)
+
+5. 금지
+   - 소프트웨어를 리버스 엔지니어링·디컴파일·디스어셈블하거나 소스 코드를
+     추출하려는 시도 (관련 법률이 명시적으로 허용하는 범위는 예외).
+   - 바이너리를 수정·재패키징·리브랜딩하여 배포하는 행위.
+   - 소프트웨어를 재판매·임대·리스·서브라이선스하거나 제3자에게 유상으로
+     제공하는 행위.
+   - 저작권·상표·기타 권리 고지를 제거하거나 변경하는 행위.
+   - 라이선스·보안 메커니즘을 우회하거나 무력화하는 행위.
+
+6. 소유권
+   소프트웨어 및 그에 관한 모든 지적 재산권은 라이선서에게 있습니다. 본
+   계약은 사용권만을 부여하며 소유권을 이전하지 않습니다.
+
+7. 제3자 구성 요소
+   소프트웨어는 각자의 라이선스가 적용되는 오픈 소스 및 제3자 구성 요소를
+   포함합니다. 해당 목록과 고지는 THIRD_PARTY_LICENSES 및 앱 내 "라이선스
+   보기"에서 확인할 수 있으며, 각 라이선스가 우선 적용됩니다.
+
+8. 보증의 부인
+   소프트웨어는 "있는 그대로(AS IS)" 제공되며, 명시적·묵시적 어떠한 보증도
+   제공되지 않습니다. 여기에는 상품성, 특정 목적 적합성, 비침해에 대한
+   묵시적 보증이 포함되나 이에 한정되지 않습니다.
+
+9. 책임의 제한
+   관련 법률이 허용하는 최대 범위 내에서, 라이선서는 소프트웨어의 사용 또는
+   사용 불능으로 발생하는 어떠한 직접·간접·부수적·특별·결과적 손해(데이터
+   손실·영업 중단 등 포함)에 대해서도 책임을 지지 않습니다.
+
+10. 준거법
+    본 계약은 대한민국 법률에 따라 해석되고 규율됩니다.
+
+11. 문의
+    - 상업용 라이선스: glance@onmcore.com
+    - 버그·일반 문의: https://github.com/onmcore/glance-releases/issues
+
+
+================================================================
+[English] - for convenience; the Korean text above is authoritative
+================================================================
+
+This Agreement is a legal agreement between the copyright holder of
+Glance (the "Software") (the "Licensor") and the individual or entity
+using the Software (the "User"). By installing, running, or using the
+Software, the User agrees to this Agreement.
+
+1. Definitions
+   - Personal / Non-Commercial Use: use by an individual for private
+     purposes, or for learning, evaluation, research, or non-profit
+     purposes.
+   - Commercial Use: use by a for-profit company, corporation,
+     institution, or organization as part of its business or
+     revenue-generating activities. Use in the course of a business is
+     Commercial Use regardless of organization size (number of
+     employees, revenue, etc.).
+
+2. Personal / Non-Commercial Use (Free)
+   The Software may be installed and used free of charge for Personal /
+   Non-Commercial Use. No license key or payment is required. Voluntary
+   donations are welcome but optional; no functionality is gated on
+   donation status.
+
+3. Commercial Use (Paid)
+   Commercial Use requires a separate, paid commercial license.
+   Inquiries: glance@onmcore.com. This build contains no technical
+   gating that restricts Commercial Use; the requirement is
+   policy-based and relies on User compliance. (License verification
+   may be introduced in future builds.)
+
+4. Permitted
+   - Install and use on any number of machines for Personal /
+     Non-Commercial Use.
+   - Redistribute the original, unmodified installer or binary, provided
+     this notice and the accompanying THIRD_PARTY_LICENSES are included
+     (no resale or distribution for a fee).
+
+5. Not Permitted
+   - Reverse engineer, decompile, or disassemble the Software, or
+     attempt to extract source code, except to the extent expressly
+     permitted by applicable law.
+   - Modify, repackage, or rebrand the binary for redistribution.
+   - Resell, rent, lease, sublicense, or provide the Software to third
+     parties for a fee.
+   - Remove or alter copyright, trademark, or other proprietary notices.
+   - Circumvent or disable any license or security mechanism.
+
+6. Ownership
+   The Software and all intellectual property rights therein remain the
+   property of the Licensor. This Agreement grants a license to use only
+   and does not transfer ownership.
+
+7. Third-Party Components
+   The Software includes open-source and third-party components subject
+   to their own licenses, listed in THIRD_PARTY_LICENSES and the in-app
+   "View Licenses" screen. Those licenses govern their components.
+
+8. Disclaimer of Warranty
+   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+   EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY,
+   FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+
+9. Limitation of Liability
+   TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSOR SHALL
+   NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, OR
+   CONSEQUENTIAL DAMAGES (INCLUDING LOSS OF DATA OR BUSINESS
+   INTERRUPTION) ARISING FROM USE OF OR INABILITY TO USE THE SOFTWARE.
+
+10. Governing Law
+    This Agreement is governed by and construed in accordance with the
+    laws of the Republic of Korea.
+
+11. Contact
+    - Commercial licensing: glance@onmcore.com
+    - Bugs and general inquiries:
+      https://github.com/onmcore/glance-releases/issues

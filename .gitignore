@@ -1,0 +1,15 @@
+# Build artifacts
+target/
+dist/
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
