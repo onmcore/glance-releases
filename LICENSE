@@ -23,21 +23,20 @@ sold; the Licensor reserves all rights not expressly granted.
      일부로 소프트웨어를 사용하는 것. 사업자의 업무에 사용되는 경우, 조직
      규모(직원 수·매출 등)와 무관하게 상업적 사용에 해당합니다.
 
-2. 개인·비상업적 사용 (무료)
-   개인·비상업적 사용에 한하여 소프트웨어를 무료로 설치·사용할 수 있습니다.
-   라이선스 키나 결제가 필요하지 않습니다. 소프트웨어가 유용하다면 자발적인
-   후원(donation)을 통한 지원을 환영하나, 전적으로 선택 사항이며 어떤 기능도
-   후원 여부로 제한되지 않습니다.
+2. 사용 (현재 무료)
+   현재 소프트웨어는 개인·비상업적 사용과 상업적 사용 모두 무료로 설치·사용할
+   수 있습니다. 라이선스 키나 결제가 필요하지 않습니다. 소프트웨어가 유용하다면
+   자발적인 후원(donation)을 환영하나, 전적으로 선택 사항이며 어떤 기능도 후원
+   여부로 제한되지 않습니다.
 
-3. 상업적 사용 (유료)
-   상업적 사용에는 별도의 유료 상업용 라이선스가 필요합니다.
-   문의: glance@onmcore.com
-   현재 빌드에는 상업적 사용을 막는 기술적 제한(게이팅)이 없습니다. 상업용
-   라이선스 요건은 정책에 의한 것이며 사용자의 준수에 기반합니다. (향후
-   빌드에서 라이선스 검증이 도입될 수 있습니다.)
+3. 향후 버전의 조건
+   본 계약은 본 릴리스(이 버전)에 적용됩니다. 라이선서는 향후 버전을 다른
+   조건(상업적 사용에 대한 유료 라이선스 포함)으로 배포할 권리를 보유합니다.
+   그러한 변경은 향후 버전에만 적용되며, 사용자가 이미 받은 버전에 대해 본
+   계약이 부여한 무료 사용 권리에는 영향을 주지 않습니다.
 
 4. 허용
-   - 임의의 수의 기기에 개인·비상업적 용도로 설치·사용.
+   - 임의의 수의 기기에 설치·사용.
    - 원본 그대로의(무수정) 설치본 또는 바이너리를, 본 고지 및 함께 제공되는
      THIRD_PARTY_LICENSES 를 포함하여 재배포하는 것. (재판매·유상 제공 제외)
 
@@ -96,22 +95,21 @@ Software, the User agrees to this Agreement.
      Commercial Use regardless of organization size (number of
      employees, revenue, etc.).
 
-2. Personal / Non-Commercial Use (Free)
-   The Software may be installed and used free of charge for Personal /
-   Non-Commercial Use. No license key or payment is required. Voluntary
-   donations are welcome but optional; no functionality is gated on
-   donation status.
+2. Use (Currently Free)
+   The Software may currently be installed and used free of charge for
+   both Personal / Non-Commercial Use and Commercial Use. No license key
+   or payment is required. Voluntary donations are welcome but optional;
+   no functionality is gated on donation status.
 
-3. Commercial Use (Paid)
-   Commercial Use requires a separate, paid commercial license.
-   Inquiries: glance@onmcore.com. This build contains no technical
-   gating that restricts Commercial Use; the requirement is
-   policy-based and relies on User compliance. (License verification
-   may be introduced in future builds.)
+3. Future Versions
+   This Agreement applies to this release (this version). The Licensor
+   reserves the right to distribute future versions under different terms,
+   including a paid commercial license for Commercial Use. Any such change
+   applies only to future versions and does not affect the free-use rights
+   this Agreement grants for a version the User has already received.
 
 4. Permitted
-   - Install and use on any number of machines for Personal /
-     Non-Commercial Use.
+   - Install and use on any number of machines.
    - Redistribute the original, unmodified installer or binary, provided
      this notice and the accompanying THIRD_PARTY_LICENSES are included
      (no resale or distribution for a fee).

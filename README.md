@@ -10,7 +10,7 @@ This repository hosts official Glance binary releases and release notes.
 
 Glance is a Git GUI built from scratch with one obsession: **speed**. It stays snappy in repositories with millions of commits and hundreds of thousands of files, while keeping a tiny memory footprint.
 
-Glance is **free for personal and non-commercial use** — no trial timer, no feature lock, no account required. **Commercial use requires a paid license** (contact glance@onmcore.com).
+Glance is **currently free** — no trial timer, no feature lock, no account required.
 
 Built through AI collaboration.
 
@@ -49,12 +49,9 @@ I read everything. Replies might take a day or two — solo dev, day job, you kn
 
 ## License
 
-Glance uses a dual license — see [LICENSE](./LICENSE):
+Glance is currently free to use. Voluntary donations are welcome but optional.
 
-- **Personal & non-commercial use** — free. Voluntary donations welcome, but optional.
-- **Commercial use** (business / revenue-generating) — requires a paid license. Contact **glance@onmcore.com**.
-
-Unmodified redistribution is allowed; reverse engineering, modification, and repackaging are not. No warranty. The current build has no technical enforcement — the commercial-license requirement is policy-based.
+Unmodified redistribution is allowed; reverse engineering, modification, and repackaging are not (see [LICENSE](./LICENSE)). No warranty.
 
 Third-party components and their licenses are listed in [THIRD_PARTY_LICENSES.md](./THIRD_PARTY_LICENSES.md).
 
