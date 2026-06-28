@@ -51,14 +51,16 @@ gitoxide (pure-Rust Git), designed to stay lightweight and fast on large reposit
 ### Commit
 - Separate title / body, sign-off
 - Amend (edit the previous commit's message, content, and author; per-file unstage)
+- Co-authors (Co-authored-by) — display, add, and edit on commit / amend
 - Commit during a merge (auto parent + pre-filled message)
 - Dynamic "Commit All / Commit Staged" button
 
 ### Branches & merging
 - Create / checkout / delete / rename branches; checkout remote branches (auto-tracking)
 - Merge (fast-forward / non-FF, conflict detection)
-- 3-way visual conflict editor (Ours / Base / Theirs, inline hunk editing, progress)
+- 3-way visual conflict editor (Ours / Base / Theirs) — Split / Unified views, clear conflict markers, inline hunk editing
 - Rebase onto a branch (local / remote)
+- Sidebar operation indicators per branch (checkout / pull / push / rebase / sync progress)
 
 ### Remotes & sync
 - Add / remove / edit remotes (separate fetch & push URLs, default push target)
@@ -86,6 +88,8 @@ gitoxide (pure-Rust Git), designed to stay lightweight and fast on large reposit
 - Localization (Korean / English / Japanese, OS auto-detect), dark / light theme (OS-linked)
 - Native Git LFS (pure Rust, automatic pointer / content conversion)
 - Submodules (list, init, update)
+- Git config management (view / edit; per-repository identity override)
+- SSH key management (generate Ed25519 / RSA keys, edit ~/.ssh/config hosts)
 - Keyboard shortcuts, per-feature Git engine selection (gix / libgit2 / CLI)
 - Collapsible sidebar, About & in-app open-source license viewer
 
