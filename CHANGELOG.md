@@ -16,8 +16,7 @@ Release notes management (Model A — single file):
 ## [Unreleased]
 
 Glance — the first public release. A high-performance Git GUI for Windows built on
-gitoxide (pure-Rust Git). Fast and light even on large repositories (100k+ commits,
-tens of thousands of files).
+gitoxide (pure-Rust Git), designed to stay lightweight and fast on large repositories.
 
 ### Repositories & worktrees
 - Open local repositories / clone remotes (live progress, background multi-clone)
@@ -27,7 +26,7 @@ tens of thousands of files).
 - Built-in bottom terminal (Git Bash)
 
 ### History & graph
-- Virtualized commit list that stays smooth at 100k+ commits
+- Virtualized commit list that stays smooth on large histories
 - Commit graph + refs sidebar (branches, remotes, tags; HEAD highlight; ahead/behind)
 - Commit search & filter (message, author, hash; Ctrl+F)
 - Combined multi-branch history (Incoming/Outgoing), stash graph
@@ -45,7 +44,7 @@ tens of thousands of files).
 - Stage / unstage by file, folder, or all
 - Precise line- and hunk-level staging (drag multi-select, separated Staged / Unstaged)
 - Discard by file or hunk
-- Real-time change detection (~1s) + status-bar scan progress
+- Real-time change detection + status-bar scan progress
 - Changes view (Flat / Group / Tree), change-type badges (A/M/D/?/!)
 - Guards against stale external edits and CRLF / binary corruption
 
