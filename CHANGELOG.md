@@ -15,85 +15,85 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
-The **first public release** of Glance.
-Glance is a **high-performance Git GUI for Windows** that stays responsive even on large
-repositories (100k+ commits, tens of thousands of files), built on gitoxide (gix) — a pure-Rust
-Git implementation. Designed for a light memory footprint with high frame rates and fast response.
+Glance — the first public release. A high-performance Git GUI for Windows built on
+gitoxide (pure-Rust Git). Fast and light even on large repositories (100k+ commits,
+tens of thousands of files).
 
-### Added
+### Repositories & worktrees
+- Open local repositories / clone remotes (live progress, background multi-clone)
+- Recent-repository list & auto-restore, repository switcher, close/remove
+- Multi-worktree support (inline switching, add/remove, worktree-aware checkout)
+- Auto-detect external Git CLI changes (branches, tags, config, submodules)
+- Built-in bottom terminal (Git Bash)
 
-**Repositories & Worktrees**
-- Open local repositories + clone remotes (live progress, background multi-clone)
-- Recent repository list & auto-restore, repository switcher dropdown, close/remove repository
-- Native multi-worktree support — inline switching, add/remove (with safety checks), worktree-aware checkout
-- Auto-detect external Git CLI changes (branches, tags, config, submodules) and reflect them in the UI instantly
-- Built-in bottom terminal (Git Bash tab)
+### History & graph
+- Virtualized commit list that stays smooth at 100k+ commits
+- Commit graph + refs sidebar (branches, remotes, tags; HEAD highlight; ahead/behind)
+- Commit search & filter (message, author, hash; Ctrl+F)
+- Combined multi-branch history (Incoming/Outgoing), stash graph
+- Commit detail panel (info, files, change stats, diff) with hover preview
+- Gravatar avatars
 
-**Commit History & Graph**
-- Virtualized commit list that stays smooth at 100k+ commits (infinite scroll)
-- Commit graph + refs sidebar tree (branches, remotes, tags; HEAD highlight; ahead/behind counts)
-- Commit search & filter (message, author, hash; Ctrl+F; navigate results with up/down)
-- Combined multi-branch history with Incoming/Outgoing distinction, stash commit graph
-- Commit detail panel (info, file list, change stats, diff) with hover quick-preview
-- Gravatar author avatars
-
-**Diff Viewer**
-- Unified / Split view toggle, multi-language syntax highlighting
-- Stepwise context-gap expansion, hunk navigator (`[` / `]`)
+### Diff viewer
+- Unified / Split views, multi-language syntax highlighting
+- Stepwise context expansion, hunk navigator (`[` / `]`)
 - Multiple split windows (independent tabs + synced file explorer)
+- File encoding & line-ending (LF/CRLF) display with one-click conversion
 - Per-field CSV coloring
 
-**Staging & Change Management**
+### Staging & changes
 - Stage / unstage by file, folder, or all
-- **Line / hunk-level precise staging** (drag multi-select, separated Staged / Unstaged model)
-- Discard changes by file or hunk
-- Real-time change detection (reflected within ~1s) + status-bar scan progress
-- Changes tree view (Flat / Group / Tree), change-type badges (A/M/D/?/!)
+- Precise line- and hunk-level staging (drag multi-select, separated Staged / Unstaged)
+- Discard by file or hunk
+- Real-time change detection (~1s) + status-bar scan progress
+- Changes view (Flat / Group / Tree), change-type badges (A/M/D/?/!)
 - Guards against stale external edits and CRLF / binary corruption
 
-**Commit**
-- Separate title / body input, sign-off
-- Amend (edit the previous commit's message, content, and author; per-file unstaging)
+### Commit
+- Separate title / body, sign-off
+- Amend (edit the previous commit's message, content, and author; per-file unstage)
 - Commit during a merge (auto parent + pre-filled message)
 - Dynamic "Commit All / Commit Staged" button
 
-**Branches & Merging**
+### Branches & merging
 - Create / checkout / delete / rename branches; checkout remote branches (auto-tracking)
 - Merge (fast-forward / non-FF, conflict detection)
-- **3-way visual conflict resolution editor** (Ours / Base / Theirs, inline hunk editing, resolution progress)
+- 3-way visual conflict editor (Ours / Base / Theirs, inline hunk editing, progress)
 - Rebase onto a branch (local / remote)
 
-**Remotes & Sync**
-- Add / remove / edit remotes (separate fetch & push URLs, default push config)
+### Remotes & sync
+- Add / remove / edit remotes (separate fetch & push URLs, default push target)
 - Fetch (manual + background auto-fetch)
 - Push (incl. force / force-with-lease)
 - Pull — Merge (FF) / Rebase / 3-way Merge (conflict resolution)
-- Private repository auth (HTTPS credential manager / SSH agent)
+- Private-repository auth (HTTPS credential manager / SSH agent)
+- Push / Pull / Sync always target the checked-out branch and its tracked upstream
 
-**Advanced Git Tools**
+### Advanced tools
 - Stash (create, pop, apply, drop; includes untracked; graph display)
 - Cherry-pick / Revert (conflict detection, auto-abort)
 - Reset (Soft / Mixed / Hard, auto-cleans in-progress state)
-- File history (per-file change log), Blame view (per-line authorship)
+- Per-file history, per-line Blame
 
-**File Explorer**
-- Per-branch full file tree (Flat / Group / Tree), file-format icons
-- Single-file full view (Blob), Markdown rendering, sortable CSV table
+### File explorer
+- Per-branch file tree (Flat / Group / Tree), file-format icons
+- Single-file full view, Markdown rendering, sortable CSV table
 
-**Timeline & Operation History**
-- Timeline — HEAD reflog visualization + non-destructive recovery (branch-at-point / checkout / revert + 1-click undo)
-- Operation history — accumulated step timelines, durations, and logs for every write operation
+### Timeline & operation history
+- Timeline — HEAD reflog visualization + non-destructive recovery (branch-at-point, checkout, revert, one-click undo)
+- Operation history — step timelines, durations, and logs for every write operation
 
-**Settings & Ecosystem**
+### Settings & ecosystem
 - Localization (Korean / English / Japanese, OS auto-detect), dark / light theme (OS-linked)
-- Native Git LFS support (pure Rust, automatic pointer / content conversion)
+- Native Git LFS (pure Rust, automatic pointer / content conversion)
 - Submodules (list, init, update)
 - Keyboard shortcuts, per-feature Git engine selection (gix / libgit2 / CLI)
-- Responsive sidebar collapse, About & in-app open-source license viewer
+- Collapsible sidebar, About & in-app open-source license viewer
 
-**License & Updates**
+### Updates & licensing
 - Automatic updates + notification center
-- Free for personal / non-commercial use, paid for commercial use — dual license (Settings > License)
+- Free for personal / non-commercial use, paid for commercial use (dual license)
 
-**Error Recovery**
+### Reliability & recovery
+- Resilient live updates (file watcher auto-restarts; warns if unresponsive)
 - Automatic detection & repair of a corrupted Git index / HEAD
