@@ -67,7 +67,7 @@ and resets that touch only the files that actually changed.
 - Merge (fast-forward and non-fast-forward) with conflict detection
 - 3-way visual conflict editor (Ours / Base / Theirs) — Split / Unified views, clear conflict markers, inline hunk editing
 - Rebase onto a local or remote branch
-- Per-branch operation indicators (checkout / pull / push / rebase / sync progress)
+- Per-branch operation indicators (checkout / pull / push / rebase / sync progress), including a live pre-check scan phase on large worktrees
 
 ### Remotes & sync
 - Add / remove / edit remotes (separate fetch & push URLs, default push target)
@@ -86,10 +86,10 @@ and resets that touch only the files that actually changed.
 
 ### File explorer
 - Per-branch file tree in Flat / Group / Tree layouts, with file-format icons; directories load lazily, so even multi-million-file trees open instantly
-- Single-file full view, Markdown rendering, and a sortable CSV table
+- Single-file full view, Markdown rendering, inline image preview, and a sortable CSV table
 
 ### Git LFS
-- Native Git LFS (pure Rust) — automatic pointer / content conversion, batched download of missing content on checkout / reset / discard, inline image preview, and progress for batch negotiation and cache restore
+- Native Git LFS (pure Rust) — automatic pointer / content conversion, batched download of missing content on checkout / reset / discard, inline image preview with on-demand download, and progress for batch negotiation and cache restore
 
 ### Timeline & operation history
 - Timeline — a HEAD reflog visualization with non-destructive recovery (branch-at-point, checkout, revert, one-click undo)
@@ -99,7 +99,7 @@ and resets that touch only the files that actually changed.
 - Localization (Korean / English / Japanese, with OS auto-detect) and dark / light theme (OS-linked)
 - Submodules — list, init, update
 - Git config management — view / edit, with per-repository identity override
-- SSH key management — generate Ed25519 / RSA keys and edit ~/.ssh/config hosts
+- SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and trust new host keys on first use (known_hosts)
 - Keyboard shortcuts and per-feature Git engine selection (gix / libgit2 / CLI)
 - Collapsible sidebar, About dialog, and an in-app open-source license viewer
 
@@ -110,3 +110,4 @@ and resets that touch only the files that actually changed.
 ### Reliability & recovery
 - Resilient live updates — the file watcher auto-restarts and warns if it becomes unresponsive
 - Automatic detection and repair of a corrupted Git index or HEAD
+- Automatic in-place recovery if the embedded WebView crashes
