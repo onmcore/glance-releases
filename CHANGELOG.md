@@ -109,5 +109,6 @@ and resets that touch only the files that actually changed.
 
 ### Reliability & recovery
 - Resilient live updates — the file watcher auto-restarts and warns if it becomes unresponsive
-- Automatic detection and repair of a corrupted Git index or HEAD
+- Automatic detection and repair of a corrupted Git index or HEAD, including stale index metadata that would force full rescans
 - Automatic in-place recovery if the embedded WebView crashes
+- Detects when Windows Defender is measurably slowing Git operations and offers a shortcut to the exclusion settings
