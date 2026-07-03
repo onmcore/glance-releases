@@ -102,6 +102,7 @@ and resets that touch only the files that actually changed.
 - Git config management — view / edit, with per-repository identity override
 - SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and trust new host keys on first use (known_hosts)
 - Keyboard shortcuts and per-feature Git engine selection (gix / libgit2 / CLI)
+- Diff algorithm selection (Histogram / Myers / Minimal)
 - Collapsible sidebar, About dialog, and an in-app open-source license viewer
 
 ### Updates & licensing
