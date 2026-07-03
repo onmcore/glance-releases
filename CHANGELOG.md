@@ -28,6 +28,7 @@ and resets that touch only the files that actually changed.
 - Multi-worktree support: inline switching, add/remove, and worktree-aware checkout
 - Automatic detection of external Git CLI changes (branches, tags, config, submodules)
 - Built-in bottom terminal (Git Bash)
+- Open the repository folder in File Explorer from the Repository menu
 
 ### History & graph
 - Virtualized commit list that stays smooth on very large histories
