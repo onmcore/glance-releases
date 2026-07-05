@@ -36,6 +36,7 @@ and resets that touch only the files that actually changed.
 - Commit search & filter by message, author, or hash (Ctrl+F)
 - Combined multi-branch history (Incoming / Outgoing) and a stash graph
 - Commit detail panel — info, files, change stats, and diff — with hover preview
+- Compare any two branches, tags, or commits — full file list and per-file diff
 - Gravatar avatars
 
 ### Diff viewer
@@ -91,6 +92,7 @@ and resets that touch only the files that actually changed.
 
 ### Git LFS
 - Native Git LFS (pure Rust) — automatic pointer / content conversion, batched download of missing content on checkout / reset / discard, inline image preview with on-demand download, and progress for batch negotiation and cache restore
+- Option to delegate downloads to the git-lfs CLI instead of the built-in transfer, for advanced/custom setups
 
 ### Timeline & operation history
 - Timeline — a HEAD reflog visualization with non-destructive recovery (branch-at-point, checkout, revert, one-click undo)
@@ -100,7 +102,7 @@ and resets that touch only the files that actually changed.
 - Localization (Korean / English / Japanese, with OS auto-detect) and dark / light theme (OS-linked)
 - Submodules — list, init, update
 - Git config management — view / edit, with per-repository identity override
-- SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and trust new host keys on first use (known_hosts)
+- SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and manage known_hosts (trust new host keys on first use, view/add/remove trusted hosts)
 - Keyboard shortcuts and per-feature Git engine selection (gix / libgit2 / CLI)
 - Diff algorithm selection (Histogram / Myers / Minimal)
 - Collapsible sidebar, About dialog, and an in-app open-source license viewer
