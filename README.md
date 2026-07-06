@@ -4,6 +4,8 @@ Ultra-high-performance Git GUI for Windows.
 
 [English](README.md) | [한글](README.ko.md)
 
+![Glance overview](docs/manual/assets/screenshots/hero.png)
+
 This repository hosts official Glance binary releases and release notes.
 
 ## About Glance
@@ -39,6 +41,10 @@ Get the latest installer from the [Releases](../../releases) page.
 | **Preview** | Upcoming features, mostly stable. | [Pre-releases](../../releases) (marked *Pre-release*) |
 
 Auto-update is built in — pick your channel under **Settings → Update**.
+
+## Manual
+
+New to Glance? The [manual](docs/manual/README.md) covers getting started, core workflows, keyboard shortcuts, and troubleshooting.
 
 ## Bug reports & feedback
 

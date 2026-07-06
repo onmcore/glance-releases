@@ -4,6 +4,8 @@ Windows용 초고성능 Git GUI.
 
 [English](README.md) | [한글](README.ko.md)
 
+![Glance 개요](docs/manual/assets/screenshots/hero.png)
+
 이 저장소는 Glance의 공식 바이너리 릴리스와 릴리스 노트를 보관합니다.
 
 ## Glance란?
@@ -39,6 +41,10 @@ AI 협업으로 만들고 있습니다.
 | **Preview** | 다가올 기능, 대체로 안정적. | [Pre-releases](../../releases) (*Pre-release* 표시) |
 
 자동 업데이트가 내장되어 있습니다 — **설정 → 업데이트** 에서 채널을 고르세요.
+
+## 매뉴얼
+
+Glance가 처음이신가요? [매뉴얼](docs/manual/README.ko.md)에서 시작하기, 핵심 워크플로우, 단축키, 문제 해결을 다룹니다.
 
 ## 버그 리포트 & 피드백
 
