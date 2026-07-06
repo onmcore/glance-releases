@@ -84,6 +84,7 @@ and resets that touch only the files that actually changed.
 - Stash — create, pop, apply, drop; includes untracked files; graph display
 - Cherry-pick and Revert, with conflict detection and auto-abort
 - Reset (Soft / Mixed / Hard), auto-cleaning any in-progress state; hard reset rewrites only changed files, staying fast on huge worktrees
+- Discard all changes back to HEAD in one step, with a confirmation step — no commit selection required
 - Per-file history and per-line Blame
 
 ### File explorer
