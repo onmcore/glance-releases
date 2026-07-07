@@ -46,6 +46,7 @@ and resets that touch only the files that actually changed.
 - File encoding and line-ending (LF/CRLF) display with one-click conversion
 - Whitespace-ignore toggle
 - Per-field CSV coloring
+- External diff/merge tool integration (VS Code, Beyond Compare, KDiff3, WinMerge, P4Merge, and more) with auto-detection
 
 ### Staging & changes
 - Stage / unstage by file, folder, or all at once
@@ -67,7 +68,7 @@ and resets that touch only the files that actually changed.
 - Create / checkout / delete / rename branches; checkout remote branches with auto-tracking
 - Delete and push tags
 - Merge (fast-forward and non-fast-forward) with conflict detection
-- 3-way visual conflict editor (Ours / Base / Theirs) — Split / Unified views, clear conflict markers, inline hunk editing
+- 3-way visual conflict editor (Ours / Base / Theirs) — Split / Unified views, clear conflict markers, inline hunk editing, and an abort button always at hand
 - Rebase onto a local or remote branch
 - Per-branch operation indicators (checkout / pull / push / rebase / sync progress), including a live pre-check scan phase on large worktrees
 
