@@ -105,6 +105,7 @@ and resets that touch only the files that actually changed.
 - Submodules — list, init, update
 - Git config management — view / edit, with per-repository identity override
 - SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and manage known_hosts (trust new host keys on first use, view/add/remove trusted hosts, in-flow trust prompt with auto-retry when an operation fails on an untrusted host)
+- Command Palette (Ctrl+P) — search and run any menu command by typing
 - Keyboard shortcuts and per-feature Git engine selection (gix / libgit2 / CLI)
 - Diff algorithm selection (Histogram / Myers / Minimal)
 - Collapsible sidebar, About dialog, and an in-app open-source license viewer
