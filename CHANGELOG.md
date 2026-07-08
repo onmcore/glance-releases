@@ -102,7 +102,7 @@ and resets that touch only the files that actually changed.
 
 ### Settings & ecosystem
 - Localization (Korean / English / Japanese, with OS auto-detect) and dark / light theme (OS-linked)
-- Submodules — list, init, update
+- Submodules — list, add, init, update
 - Git config management — view / edit, with per-repository identity override
 - SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and manage known_hosts (trust new host keys on first use, view/add/remove trusted hosts, in-flow trust prompt with auto-retry when an operation fails on an untrusted host)
 - Command Palette (Ctrl+P) — search and run any menu command by typing
@@ -119,3 +119,4 @@ and resets that touch only the files that actually changed.
 - Automatic detection and repair of a corrupted Git index or HEAD, including stale index metadata that would force full rescans
 - Automatic in-place recovery if the embedded WebView crashes
 - Detects when Windows Defender is measurably slowing Git operations and offers a shortcut to the exclusion settings
+- Automatic crash reporting to help us fix bugs faster (no personal data beyond a scrubbed Windows username; see Settings for details)
