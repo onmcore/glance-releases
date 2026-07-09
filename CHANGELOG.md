@@ -52,7 +52,7 @@ and resets that touch only the files that actually changed.
 - Stage / unstage by file, folder, or all at once
 - Precise line- and hunk-level staging (drag multi-select; separated Staged / Unstaged)
 - Discard by file or by hunk
-- Real-time change detection with a status-bar scan progress indicator
+- Real-time change detection with a status-bar scan progress indicator; scans adapt to system load and defer politely when the window is unfocused or the machine is busy
 - Changes view in Flat / Group / Tree layouts, with change-type badges (A/M/D/?/!)
 - Guards against stale external edits and CRLF / binary corruption
 
@@ -74,7 +74,7 @@ and resets that touch only the files that actually changed.
 
 ### Remotes & sync
 - Add / remove / edit remotes (separate fetch & push URLs, default push target)
-- Fetch, manually or via background auto-fetch
+- Fetch, manually or via background auto-fetch (skips itself on a busy machine)
 - Push, including force and force-with-lease
 - Pull — Merge (FF), Rebase, or 3-way Merge with conflict resolution
 - One-click Sync (pull then push) with retry feedback
@@ -87,6 +87,7 @@ and resets that touch only the files that actually changed.
 - Reset (Soft / Mixed / Hard), auto-cleaning any in-progress state; hard reset rewrites only changed files, staying fast on huge worktrees
 - Discard all changes back to HEAD in one step, with a confirmation step — no commit selection required
 - Export commits as .patch files and apply .patch/.diff files to the worktree — share changes without a remote
+- Restore a single file to its state at any commit, right from the file history or a commit's file list
 - Per-file history and per-line Blame
 
 ### File explorer
