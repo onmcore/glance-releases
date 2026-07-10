@@ -121,4 +121,5 @@ and resets that touch only the files that actually changed.
 - Automatic detection and repair of a corrupted Git index or HEAD, including stale index metadata that would force full rescans
 - Automatic in-place recovery if the embedded WebView crashes
 - Detects when Windows Defender is measurably slowing Git operations and offers a shortcut to the exclusion settings
+- One-click bug reporting from the Help menu or an error toast — attach logs and a screenshot (both optional, with a preview before sending), no GitHub account needed
 - Automatic crash reporting to help us fix bugs faster (no personal data beyond a scrubbed Windows username; see Settings for details)
