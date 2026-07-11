@@ -123,4 +123,4 @@ and resets that touch only the files that actually changed.
 - Automatic in-place recovery if the embedded WebView crashes
 - Detects when Windows Defender is measurably slowing Git operations and offers a shortcut to the exclusion settings
 - One-click bug reporting from the Help menu or an error toast — attach logs and a screenshot (both optional, with a preview before sending), no GitHub account needed
-- Optional crash reporting to help us fix bugs faster — asked on first launch, changeable anytime in Settings, and asked again per-crash if you haven't opted in (no personal data beyond a scrubbed Windows username)
+- If Glance crashes, you're asked every time before anything is sent — nothing is stored or sent without that per-crash confirmation (no personal data beyond a scrubbed Windows username)
