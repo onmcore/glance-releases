@@ -114,7 +114,7 @@ and resets that touch only the files that actually changed.
 
 ### Updates & licensing
 - Automatic updates with a notification center
-- Free to use; voluntary donations welcome
+- Free to use; voluntary donations welcome via Ko-fi (Help menu or About dialog)
 
 ### Reliability & recovery
 - Resilient live updates — the file watcher auto-restarts and warns if it becomes unresponsive
