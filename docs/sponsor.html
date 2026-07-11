@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Support Glance</title>
+<meta name="description" content="Support the development of Glance, a free high-performance Git GUI for Windows." />
+<link rel="icon" type="image/png" href="assets/glance-icon.png" />
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f7f6f3;
+    --card: #ffffff;
+    --text: #1b1b1f;
+    --muted: #5f5f68;
+    --border: #e4e2dd;
+    --accent: #2f6feb;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f1115;
+      --card: #171a21;
+      --text: #ecebe8;
+      --muted: #9a9aa2;
+      --border: #2a2d36;
+      --accent: #6ea8ff;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Pretendard, "Malgun Gothic", Roboto, sans-serif;
+  }
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  main {
+    width: 100%;
+    max-width: 560px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 40px 36px;
+    text-align: center;
+  }
+  .icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 26px;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0 0 8px;
+    font-size: 15px;
+  }
+  .lede {
+    font-size: 12.5px;
+    margin-bottom: 8px;
+  }
+  .hint {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 28px 0 8px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.08s ease, opacity 0.15s ease;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-kofi {
+    background: #ff5e5b;
+    color: #ffffff;
+  }
+  .btn-kofi:hover { opacity: 0.92; }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+  .foot {
+    margin-top: 28px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .foot a { color: var(--muted); }
+  .divider {
+    margin: 28px 0;
+    border: none;
+    border-top: 1px solid var(--border);
+  }
+  .lang-toggle {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+  .lang-toggle a {
+    color: var(--muted);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  /* 언어 전환은 클래스 토글로만 한다 — style.display='' 로는 이 규칙을 못 이긴다. */
+  [data-lang] { display: none; }
+  [data-lang].is-active { display: block; }
+  .buttons[data-lang].is-active { display: flex; }
+</style>
+</head>
+<body>
+<main>
+  <img class="icon" src="assets/glance-icon.png" alt="Glance icon" />
+
+  <div data-lang="en">
+    <h1>Support Glance</h1>
+    <p class="lede">
+      Glance is completely free for personal &amp; non-commercial use.
+      If it saves you time, a small tip helps keep it actively developed.
+    </p>
+    <p class="hint">Any words of encouragement or feature suggestions are always welcome.</p>
+  </div>
+  <div data-lang="ko">
+    <h1>Glance 후원하기</h1>
+    <p class="lede">
+      Glance는 개인·비상업적 용도로는 조건 없이 완전히 무료입니다.
+      Glance가 도움이 되셨다면, 작은 후원이 꾸준한 개발에 큰 힘이 됩니다.
+    </p>
+    <p class="hint">따뜻한 응원 한마디나 바라는 기능이 있다면 언제든 편하게 남겨주세요!</p>
+  </div>
+
+  <div class="buttons" data-lang="en">
+    <a class="btn btn-kofi" href="https://ko-fi.com/glanceapp" target="_blank" rel="noopener noreferrer">
+      ☕ Support on Ko-fi
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/onmcore/glance-releases" target="_blank" rel="noopener noreferrer">
+      ⭐ Star on GitHub
+    </a>
+  </div>
+  <div class="buttons" data-lang="ko">
+    <a class="btn btn-kofi" href="https://ko-fi.com/glanceapp" target="_blank" rel="noopener noreferrer">
+      ☕ Ko-fi로 후원하기
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/onmcore/glance-releases" target="_blank" rel="noopener noreferrer">
+      ⭐ GitHub에서 스타 주기
+    </a>
+  </div>
+
+  <hr class="divider" />
+
+  <p class="foot" data-lang="en">
+    Every bit of support is optional and appreciated. Thank you for using Glance. 🙌<br />
+    <a href="https://github.com/onmcore/glance-releases">← Back to Glance</a>
+  </p>
+  <p class="foot" data-lang="ko">
+    후원은 어디까지나 자발적입니다. Glance를 사용해주셔서 감사합니다. 🙌<br />
+    <a href="https://github.com/onmcore/glance-releases">← Glance로 돌아가기</a>
+  </p>
+
+  <div class="lang-toggle">
+    <a onclick="setLang('en')">English</a> · <a onclick="setLang('ko')">한국어</a>
+  </div>
+</main>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('is-active', el.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('glance-sponsor-lang', lang); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('glance-sponsor-lang'); } catch (e) {}
+    var lang = saved || (navigator.language && navigator.language.startsWith('ko') ? 'ko' : 'en');
+    setLang(lang);
+  })();
+</script>
+</body>
+</html>
