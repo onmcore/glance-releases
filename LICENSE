@@ -153,3 +153,102 @@ Software, the User agrees to this Agreement.
     - Commercial licensing: glance@onmcore.com
     - Bugs and general inquiries:
       https://github.com/onmcore/glance-releases/issues
+
+
+================================================================
+[日本語] - 参考訳（上記の韓国語が正文）
+================================================================
+
+ソフトウェアは使用許諾されるものであり、販売されるものではなく、ライセンサーは明示的に付与していないすべての権利を保有します。
+
+本契約は、Glance（以下「ソフトウェア」という）の著作権者（以下「ライセンサー」という）と、ソフトウェアを使用する個人又は法人（以下「ユーザー」という）の間の法的契約です。ソフトウェアをインストール、実行、使用することにより、ユーザーは本契約に同意するものとみなされます。
+
+1. 定義
+   - 個人・非営利目的の使用：個人が私的目的のため、又は学習、評価、研究若しくは非営利目的のためにソフトウェアを使用すること。
+   - 商業的使用：営利法人、事業会社、機関又は団体が、事業活動又は収益生成活動の一部としてソフトウェアを使用すること。事業の過程でソフトウェアが使用される場合、従業員数、収益その他の組織規模にかかわらず、商業的使用に該当します。
+
+2. 使用（現在無料）
+   ソフトウェアは、個人・非営利目的の使用及び商業的使用の両方について、現在無料でインストール及び使用することができます。ライセンスキーまたは支払いは必要ありません。ソフトウェアが有用である場合、任意の寄付は歓迎されますが、完全に任意選択であり、いかなる機能も寄付の有無によって制限されることはありません。
+
+3. 将来のバージョンの条件
+   本契約は、本リリース（本バージョン）に適用されます。ライセンサーは、商業的使用の有料ライセンスを含む異なる条件の下で、将来のバージョンを配布する権利を保有します。かかる変更は、将来のバージョンにのみ適用され、ユーザーが既に受領したバージョンに対して本契約が付与する無料使用権に影響を与えません。
+
+4. 許可される行為
+   - 任意の数のデバイスにソフトウェアをインストール及び使用する。
+   - 本通知及び付属する THIRD_PARTY_LICENSES を含めて、元のままの（未修正の）インストーラーまたはバイナリを再配布する。（再販売・有償での提供は除く）
+
+5. 禁止される行為
+   - ソフトウェアをリバースエンジニアリング、デコンパイル、逆アセンブルする、又はソースコードを抽出しようとする行為（関連法令が明示的に許可する場合は除く）。
+   - バイナリを修正、再パッケージング、リブランディングして配布する行為。
+   - ソフトウェアを再販売、賃貸、リース、サブライセンス、又は第三者に有償で提供する行為。
+   - 著作権、商標若しくはその他の権利表示を削除又は変更する行為。
+   - ライセンス若しくはセキュリティメカニズムを迂回又は無効化する行為。
+
+6. 知的財産権
+   ソフトウェア及びそれに関するすべての知的財産権は、ライセンサーに帰属します。本契約は使用ライセンスのみを付与し、所有権の移転は行いません。
+
+7. 第三者コンポーネント
+   ソフトウェアは、各自のライセンスが適用される、オープンソース及び第三者コンポーネントを含みます。該当するリスト及び通知は、THIRD_PARTY_LICENSES 及びアプリ内「ライセンス表示」で確認でき、各ライセンスが優先的に適用されます。
+
+8. 保証の免責
+   ソフトウェアは「現状のまま」提供され、明示的又は黙示的にいかなる保証も提供されません。これには、商品性、特定目的への適合性、非侵害に関する黙示的保証が含まれますが、これらに限定されません。
+
+9. 責任の制限
+   適用法が許容する最大の範囲において、ライセンサーは、ソフトウェアの使用又は使用不能から生じるいかなる直接的、間接的、付随的、特別的、又は結果的損害（データの喪失、事業の中断等を含む）に対しても、責任を負いません。
+
+10. 準拠法
+    本契約は、大韓民国の法律に従って解釈され、規律されます。
+
+11. お問い合わせ
+    - 商用ライセンス：glance@onmcore.com
+    - バグ・一般的なお問い合わせ：https://github.com/onmcore/glance-releases/issues
+
+
+================================================================
+[Deutsch] - zur Information; der koreanische Text oben ist maßgeblich
+================================================================
+
+Die Software ist lizenziert, nicht verkauft; der Lizenzgeber behält sich alle nicht ausdrücklich gewährten Rechte vor.
+
+Diese Vereinbarung ist ein rechtsverbindliches Abkommen zwischen dem Urheberrechtsinhaber von Glance (die „Software") (der „Lizenzgeber") und dem Einzelnen oder der juristischen Person, die die Software nutzt (der „Nutzer"). Durch die Installation, das Ausführen oder die Nutzung der Software erklärt sich der Nutzer mit dieser Vereinbarung einverstanden.
+
+1. Definitionen
+   - Persönliche / Nicht-gewerbliche Nutzung: Nutzung durch eine Einzelperson zu privaten Zwecken oder zu Lehr-, Evaluierungs-, Forschungs- oder gemeinnützigen Zwecken.
+   - Gewerbliche Nutzung: Nutzung durch ein gewinnorientiertes Unternehmen, eine Kapitalgesellschaft, Institution oder Organisation als Teil ihrer Geschäftstätigkeit oder umsatzgenerierenden Aktivitäten. Die Nutzung im Rahmen eines Geschäftsbetriebs gilt unabhängig von der Organisationsgröße (Anzahl der Mitarbeiter, Umsatz usw.) als gewerbliche Nutzung.
+
+2. Nutzung (derzeit kostenlos)
+   Die Software darf derzeit sowohl für persönliche / nicht-gewerbliche Nutzung als auch für gewerbliche Nutzung kostenlos installiert und genutzt werden. Es ist kein Lizenzschlüssel oder Bezahlung erforderlich. Freiwillige Spenden sind willkommen, aber völlig optional; keine Funktionalität ist vom Spendenstatus abhängig.
+
+3. Bedingungen für künftige Versionen
+   Diese Vereinbarung gilt für dieses Release (diese Version). Der Lizenzgeber behält sich das Recht vor, künftige Versionen unter anderen Bedingungen, einschließlich einer kostenpflichtigen Lizenz für die gewerbliche Nutzung, zu verteilen. Solche Änderungen gelten nur für künftige Versionen und beeinflussen nicht die kostenlosen Nutzungsrechte, die diese Vereinbarung für eine Version gewährt, die der Nutzer bereits erhalten hat.
+
+4. Zulässig
+   - Installation und Nutzung auf einer beliebigen Anzahl von Geräten.
+   - Weitergabe des originalen, unveränderten Installers oder der Binärdatei, vorausgesetzt, diese Mitteilung und die beigefügte Datei THIRD_PARTY_LICENSES sind enthalten (kein Wiederverkauf oder Verteilung gegen Gebühr).
+
+5. Nicht zulässig
+   - Reverse Engineering, Dekompilierung oder Disassemblierung der Software oder der Versuch, den Quellcode zu extrahieren, außer soweit dies ausdrücklich durch anwendbares Recht gestattet ist.
+   - Änderung, Neuverpackung oder Umbenennung der Binärdatei zur Weitergabe.
+   - Wiederverkauf, Vermietung, Leasinggewährung, Unterlizenzierung oder Bereitstellung der Software an Dritte gegen Gebühr.
+   - Entfernung oder Änderung von Urheberrechts-, Marken- oder sonstigen Eigentumshinweisen.
+   - Umgehung oder Deaktivierung eines Lizenz- oder Sicherheitsmechanismus.
+
+6. Eigentumsrechte
+   Die Software und alle damit verbundenen Urheberrechte und Schutzrechte verbleiben im Eigentum des Lizenzgebers. Diese Vereinbarung räumt nur eine Nutzungslizenz ein und überträgt keine Eigentumsrechte.
+
+7. Komponenten von Drittanbietern
+   Die Software enthält Open-Source- und Komponenten von Drittanbietern, die ihren eigenen Lizenzbedingungen unterliegen. Diese sind in der Datei THIRD_PARTY_LICENSES und auf der Anwendungsseite „Lizenzen anzeigen" aufgeführt und unterliegen diesen Lizenzen.
+
+8. Gewährleistungsausschluss
+   DIE SOFTWARE WIRD OHNE MÄNGELHAFTUNG UND OHNE JEGLICHE AUSDRÜCKLICHE ODER STILLSCHWEIGENDE GARANTIE ZUR VERFÜGUNG GESTELLT, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF GEWÄHRLEISTUNGEN ZUR MARKTGÄNGIGKEIT, EIGNUNG FÜR EINEN BESTIMMTEN ZWECK UND NICHTVERLETZUNG VON RECHTEN DRITTER.
+
+9. Haftungsbeschränkung
+   IM GRÖSSTMÖGLICHEN, DURCH ANWENDBARES RECHT ZULÄSSIGEN UMFANG HAFTET DER LIZENZGEBER NICHT FÜR DIREKTE, INDIREKTE, ZUFÄLLIGE, BESONDERE ODER FOLGESCHÄDEN (EINSCHLIESSLICH DATENVERLUST ODER BETRIEBSUNTERBRECHUNG), DIE SICH AUS DER NUTZUNG ODER DER UNMÖGLICHKEIT DER NUTZUNG DER SOFTWARE ERGEBEN.
+
+10. Anwendbares Recht
+    Diese Vereinbarung unterliegt den Gesetzen der Republik Korea und wird nach diesen ausgelegt.
+
+11. Kontakt
+    - Kommerzielle Lizenzierung: glance@onmcore.com
+    - Fehlerbericht und allgemeine Anfragen:
+      https://github.com/onmcore/glance-releases/issues

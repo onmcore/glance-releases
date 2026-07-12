@@ -2,7 +2,7 @@
 
 _Last updated: 2026-07-12_
 
-[English](PRIVACY.md) | [한글](PRIVACY.ko.md)
+[English](PRIVACY.md) | [한글](PRIVACY.ko.md) | [日本語](PRIVACY.ja.md) | [Deutsch](PRIVACY.de.md)
 
 Glance is a Windows desktop application, designed to collect as little as possible.
 

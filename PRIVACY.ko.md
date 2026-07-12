@@ -2,7 +2,7 @@
 
 _최종 수정: 2026-07-12_
 
-[English](PRIVACY.md) | [한글](PRIVACY.ko.md)
+[English](PRIVACY.md) | [한글](PRIVACY.ko.md) | [日本語](PRIVACY.ja.md) | [Deutsch](PRIVACY.de.md)
 
 Glance 는 Windows 데스크톱 애플리케이션이며, 최소한의 정보만 다루도록 설계되었습니다.
 
