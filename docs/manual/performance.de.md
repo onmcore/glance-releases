@@ -22,4 +22,4 @@ Glance wurde mit einem einzigen Ziel entwickelt: In großen Repositorys reaktion
 
 ## Sehen Sie es in Aktion
 
-<!-- TODO: embed GIF — opening a large repository -->
+![Glance beim Durchsuchen des Linux-Kernel-Repositories — Commit-Graph, Commit-Details und Diff-Staging](assets/gifs/repo-open.gif)

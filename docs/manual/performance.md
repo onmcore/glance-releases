@@ -22,4 +22,4 @@ Glance is built around one goal: staying responsive on large repositories.
 
 ## See it in action
 
-<!-- TODO: embed GIF — opening a large repository -->
+![Glance browsing the Linux kernel repository — commit graph, commit detail, and diff staging](assets/gifs/repo-open.gif)

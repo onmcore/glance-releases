@@ -6,7 +6,7 @@ Windows용 초고성능 Git GUI.
 
 [English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
-![Glance 개요](docs/manual/assets/screenshots/hero.png)
+![Glance로 리눅스 커널 저장소를 탐색하는 모습 — 커밋 그래프, 커밋 상세, diff 스테이징](docs/manual/assets/gifs/repo-open.gif)
 
 이 저장소는 Glance의 공식 바이너리 릴리스와 릴리스 노트를 보관합니다.
 

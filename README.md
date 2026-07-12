@@ -6,7 +6,7 @@ Ultra-high-performance Git GUI for Windows.
 
 [English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
-![Glance overview](docs/manual/assets/screenshots/hero.png)
+![Glance browsing the Linux kernel repository — commit graph, commit detail, and diff staging](docs/manual/assets/gifs/repo-open.gif)
 
 This repository hosts official Glance binary releases and release notes.
 

@@ -22,4 +22,4 @@ Glance は大規模なリポジトリでも反応性を失わないという 1 �
 
 ## 実際に動作を見る
 
-<!-- TODO: embed GIF — opening a large repository -->
+![Glance で Linux カーネルリポジトリを閲覧する様子 — コミットグラフ、コミット詳細、diff ステージング](assets/gifs/repo-open.gif)

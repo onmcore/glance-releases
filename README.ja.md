@@ -6,7 +6,7 @@ Windows用 超高性能 Git GUI。
 
 [English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
-![Glance の概要](docs/manual/assets/screenshots/hero.png)
+![Glance で Linux カーネルリポジトリを閲覧する様子 — コミットグラフ、コミット詳細、diff ステージング](docs/manual/assets/gifs/repo-open.gif)
 
 このリポジトリは Glance の公式バイナリリリースとリリースノートをホストしています。
 
