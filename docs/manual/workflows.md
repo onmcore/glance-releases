@@ -7,9 +7,20 @@
 The **Branches** tab shows the commit graph — a virtualized list that stays smooth even at hundreds of thousands of commits. The sidebar's refs tree lists branches, remotes, tags, and stashes; selecting one filters or jumps the graph.
 
 - `Ctrl+F` opens search — filter commits by message, author, or hash
-- Right-click a commit for actions: checkout, create branch, cherry-pick, reset, compare
+- Right-click a commit for actions: checkout, create branch, cherry-pick, reset, compare, export as patch, or open in a new window
 - Toggle **All Branches** to see the entire history as one flat list instead of just the current branch's ancestry
 - Hovering a commit shows a quick preview; clicking opens full details (Info / Changes tabs) in the right panel
+- **Open in new window** pops a commit's detail view into its own window, so you can keep browsing history in the main window while comparing
+
+### Resetting
+
+Right-click a commit → **Reset to this commit** to move the current branch there:
+
+- **Soft** — moves the branch pointer only; your working directory and staged changes are untouched
+- **Mixed** — moves the pointer and updates the index, but leaves working directory files as they are
+- **Hard** — moves the pointer and rewrites the index and working directory to match (discards uncommitted changes — untracked files are left alone)
+
+If a hard reset goes wrong, [Timeline](#timeline) can usually get you back.
 
 ![Commit graph with refs sidebar](assets/screenshots/hero.png)
 
@@ -21,8 +32,20 @@ The **Changes** tab is your working directory staging area, split into **Staged*
 - Open a file's diff to stage or discard individual hunks or lines, not just whole files
 - Discard is available at the file or hunk level
 - Write your commit message in the panel below and submit with `Ctrl+Enter`
+- The diff header shows each file's encoding (UTF-8, EUC-KR, etc.) and line ending (LF/CRLF); for unstaged working-copy files, clicking either chip lets you convert it
 
 Changes are detected in real time by a file watcher — no manual refresh needed.
+
+### Co-authors and signing
+
+The gear icon (⚙) above the commit message adds:
+
+- **Co-authors** — opens a modal to add contributors by name/email (with autocomplete from recent contributors); they're appended as `Co-authored-by` trailers when you commit
+- **Sign commit** — signs with your configured Git signing key (SSH or GPG). Unencrypted/passphrase-less SSH keys are signed in-process; GPG or passphrase-protected keys fall back to your system's `git`/`gpg-agent` setup
+
+### Amending
+
+Toggle **Amend** in the commit panel to fold your staged changes into the previous commit instead of creating a new one. The message and author pre-fill from that commit, and the Staged section shows what the amended commit will contain — lines already in `HEAD` are read-only, and unstaging a file removes it from the amend.
 
 ![Changes panel with hunk-level staging](assets/screenshots/staging.png)
 
@@ -47,6 +70,8 @@ Stash uncommitted changes from the Branch menu (**Stash Changes...**), optionall
 
 Whenever a merge, rebase, or cherry-pick hits a conflict, Glance opens the **Merge Editor** — a three-way view (Ours / Base / Theirs) with `[` / `]` to jump between conflicts. Resolve, then continue or abort the operation from the same view.
 
+If you'd rather use an external tool (Beyond Compare, WinMerge, KDiff3, and similar), configure it in Settings — Glance will offer to open diffs and conflicts in it instead of the built-in view.
+
 ![Merge Editor three-way view](assets/screenshots/merge-editor.png)
 
 ## Remote sync
@@ -64,15 +89,35 @@ For SSH-based clone/fetch/push, set up a key under **Settings → SSH Keys**:
 
 ![SSH Keys settings section](assets/screenshots/ssh-keys.png)
 
+## Advanced
+
+### Worktrees
+
+Right-click the repository header → **New worktree** to check out another branch into its own folder, without disturbing your current one — useful for working on two things at once. Pick a starting branch, a target path, and a name. Switch between worktrees from the sidebar's worktree selector; delete one with the × next to its name (the worktree you're currently in can't be deleted).
+
+### Submodules
+
+Submodules show up in the sidebar. Uninitialized ones have an **Init** button; initialized ones open as their own repository when clicked, and can be updated from their right-click menu.
+
+### Patches
+
+For sharing changes without a shared remote, right-click a commit (or drag-select a range) → **Export as patch**. Apply one later via the Repository menu's **Apply patch**. Note this is closer to `git apply` than `git am` — it updates your working tree, so you'll still stage and commit the result yourself.
+
+### Diff algorithm
+
+If a particular diff doesn't render the way you expect, **Settings → Editor** lets you switch the diff algorithm between Histogram (default), Myers, and Minimal.
+
 ## Comparing refs
 
 Right-click any commit, branch, or tag for **Compare** — view the file-level diff between two arbitrary refs, independent of your current checkout. Toggle between two-dot (`a..b`) and three-dot (`a...b`, merge-base) comparison, and swap sides.
 
 ## Exploring files
 
-The **File Explorer** tab browses the full repository tree (not just changed files), in Flat, Grouped, or Tree layout. Opening a file shows its contents with syntax highlighting; Markdown files can toggle between raw and rendered preview, and CSV files between raw text and a sortable table.
+The **File Explorer** tab browses the full repository tree (not just changed files), in Flat, Grouped, or Tree layout. Opening a file shows its contents with syntax highlighting; Markdown files can toggle between raw and rendered preview, and CSV/TSV files between raw text and a sortable, clickable-header table.
 
 From a file's context menu you can also view its **history** (every commit that touched it) or its **blame** (line-by-line author/commit annotations).
+
+Files tracked with Git LFS show a badge in the tree and download on demand — beyond having `filter=lfs` set in `.gitattributes`, there's no separate setup.
 
 ## Timeline
 

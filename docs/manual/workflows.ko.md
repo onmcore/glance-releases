@@ -7,9 +7,20 @@
 **Branches** 탭에서 커밋 그래프를 볼 수 있습니다 — 가상화된 리스트라 수십만 개 커밋에서도 부드럽게 스크롤됩니다. 사이드바의 refs 트리에는 브랜치·리모트·태그·stash가 나열되며, 하나를 선택하면 그래프가 필터되거나 해당 위치로 이동합니다.
 
 - `Ctrl+F`로 검색 열기 — 메시지·작성자·해시로 커밋 필터링
-- 커밋 우클릭으로 체크아웃, 브랜치 생성, cherry-pick, reset, compare 등 실행
+- 커밋 우클릭으로 체크아웃, 브랜치 생성, cherry-pick, reset, compare, patch로 내보내기, 새 창에서 열기 등 실행
 - **All Branches** 토글로 현재 브랜치 조상 커밋만이 아니라 전체 히스토리를 하나의 리스트로 보기
 - 커밋에 마우스를 올리면 미리보기, 클릭하면 오른쪽 패널에 상세(Info / Changes 탭) 표시
+- **새 창에서 열기**는 커밋 상세 화면을 별도 창으로 띄워, 메인 창에서 히스토리를 계속 보면서 비교할 수 있게 해줍니다
+
+### Reset
+
+커밋을 우클릭 → **Reset to this commit**으로 현재 브랜치를 그 지점으로 옮길 수 있습니다:
+
+- **Soft** — 브랜치 포인터만 이동. 워킹 디렉토리와 staged 변경사항은 그대로 유지됩니다
+- **Mixed** — 포인터를 옮기고 인덱스도 갱신하지만, 워킹 디렉토리 파일은 그대로 둡니다
+- **Hard** — 포인터·인덱스·워킹 디렉토리를 전부 그 지점에 맞춰 재작성합니다 (커밋 안 된 변경사항은 사라짐 — untracked 파일은 건드리지 않습니다)
+
+Hard reset이 잘못됐다면 [Timeline](#timeline)으로 대부분 복구할 수 있습니다.
 
 ![refs 사이드바 + 커밋 그래프](assets/screenshots/hero.png)
 
@@ -21,8 +32,20 @@
 - 파일 전체가 아니라 diff를 열어 개별 hunk나 라인 단위로 stage/discard 가능
 - Discard도 파일 또는 hunk 단위로 가능
 - 아래 패널에 커밋 메시지를 쓰고 `Ctrl+Enter`로 제출
+- diff 헤더에 파일의 인코딩(UTF-8, EUC-KR 등)과 줄바꿈(LF/CRLF)이 표시됩니다. Unstaged 워킹 카피 파일은 칩을 클릭해 변환할 수 있습니다
 
 변경 사항은 파일 워처가 실시간으로 감지합니다 — 수동 새로고침 불필요.
+
+### 공동 작성자 & 서명
+
+커밋 메시지 위 톱니바퀴(⚙) 아이콘에서:
+
+- **공동 작성자(Co-authors)** — 이름/이메일로 기여자를 추가하는 모달을 엽니다(최근 기여자 자동완성 지원). 커밋 시 `Co-authored-by` 트레일러로 추가됩니다
+- **커밋 서명(Sign commit)** — 설정된 Git 서명 키(SSH 또는 GPG)로 서명합니다. 암호화되지 않은/패스프레이즈 없는 SSH 키는 앱 내에서 바로 서명되고, GPG나 패스프레이즈 보호된 키는 시스템의 `git`/`gpg-agent` 설정으로 위임됩니다
+
+### Amend
+
+커밋 패널의 **Amend** 토글을 켜면 새 커밋을 만드는 대신 staged 변경사항을 이전 커밋에 합칩니다. 메시지와 작성자가 그 커밋에서 미리 채워지고, Staged 섹션에는 amend될 커밋의 내용이 표시됩니다 — 이미 `HEAD`에 있는 라인은 읽기 전용이며, 파일을 unstage하면 amend 대상에서 빠집니다.
 
 ![hunk 단위 스테이징이 보이는 Changes 패널](assets/screenshots/staging.png)
 
@@ -47,6 +70,8 @@ Branch 메뉴의 **Stash Changes...**로 커밋되지 않은 변경사항을 보
 
 Merge, rebase, cherry-pick 중 충돌이 나면 Glance가 **Merge Editor**를 엽니다 — 3-way 뷰(Ours / Base / Theirs)이고 `[` / `]`로 충돌 사이를 이동합니다. 해결 후 같은 화면에서 계속하거나 작업을 중단(abort)할 수 있습니다.
 
+외부 툴(Beyond Compare, WinMerge, KDiff3 등)을 쓰고 싶다면 Settings에서 설정하세요 — 내장 뷰 대신 그 툴로 diff와 충돌을 열어줍니다.
+
 ![Merge Editor 3-way 뷰](assets/screenshots/merge-editor.png)
 
 ## 리모트 동기화
@@ -64,15 +89,35 @@ SSH 기반 clone/fetch/push를 쓰려면 **Settings → SSH Keys**에서 키를 
 
 ![SSH Keys 설정 화면](assets/screenshots/ssh-keys.png)
 
+## 고급
+
+### Worktree
+
+저장소 헤더 우클릭 → **New worktree**로 다른 브랜치를 별도 폴더에 체크아웃할 수 있습니다 — 현재 작업을 건드리지 않고 두 가지를 동시에 진행할 때 유용합니다. 시작 브랜치, 대상 경로, 이름을 지정하세요. 사이드바의 worktree 선택기에서 전환하고, 이름 옆 ×로 삭제할 수 있습니다(현재 있는 worktree는 삭제 불가).
+
+### Submodule
+
+Submodule은 사이드바에 표시됩니다. 초기화 안 된 항목은 **Init** 버튼이, 초기화된 항목은 클릭하면 별도 저장소로 열리며, 우클릭 메뉴에서 업데이트할 수 있습니다.
+
+### Patch
+
+공유 리모트 없이 변경사항을 주고받으려면, 커밋 우클릭(또는 범위 드래그 선택) → **Export as patch**를 쓰세요. 나중에 Repository 메뉴의 **Apply patch**로 적용합니다. 이건 `git am`보다는 `git apply`에 가깝습니다 — 워킹 트리만 갱신하므로, stage와 commit은 직접 해야 합니다.
+
+### Diff 알고리즘
+
+특정 diff가 예상과 다르게 보인다면, **Settings → Editor**에서 diff 알고리즘을 Histogram(기본) / Myers / Minimal 중에서 바꿀 수 있습니다.
+
 ## 두 ref 비교
 
 커밋·브랜치·태그를 우클릭해 **Compare**를 선택하면, 현재 체크아웃 상태와 무관하게 임의의 두 ref 사이 파일 단위 diff를 볼 수 있습니다. 2-dot(`a..b`)과 3-dot(`a...b`, merge-base 기준) 비교를 전환하고 양쪽을 바꿀 수 있습니다.
 
 ## 파일 탐색
 
-**File Explorer** 탭은 (변경 여부와 무관하게) 저장소 전체 파일 트리를 Flat / Grouped / Tree 레이아웃으로 보여줍니다. 파일을 열면 문법 강조가 적용된 내용이 표시되고, Markdown은 원본/렌더링 미리보기를 전환할 수 있으며, CSV는 원본 텍스트와 정렬 가능한 표를 전환할 수 있습니다.
+**File Explorer** 탭은 (변경 여부와 무관하게) 저장소 전체 파일 트리를 Flat / Grouped / Tree 레이아웃으로 보여줍니다. 파일을 열면 문법 강조가 적용된 내용이 표시되고, Markdown은 원본/렌더링 미리보기를 전환할 수 있으며, CSV/TSV는 원본 텍스트와 헤더 클릭으로 정렬 가능한 표를 전환할 수 있습니다.
 
 파일 컨텍스트 메뉴에서 **history**(그 파일을 건드린 모든 커밋)나 **blame**(라인별 작성자·커밋 주석)도 볼 수 있습니다.
+
+Git LFS로 관리되는 파일은 트리에 배지가 표시되고 필요할 때 자동으로 다운로드됩니다 — `.gitattributes`에 `filter=lfs` 설정만 돼 있으면 별도 설정이 필요 없습니다.
 
 ## Timeline
 

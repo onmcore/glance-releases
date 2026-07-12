@@ -9,9 +9,10 @@ A short, practical guide to using Glance. If you've used any Git GUI before, you
 ## Contents
 
 1. [Getting Started](getting-started.md) — install, open or clone a repo, tour the interface
-2. [Core Workflows](workflows.md) — history, staging, branching, remotes, SSH, diffing, Timeline
-3. [Keyboard Shortcuts](shortcuts.md)
-4. [Troubleshooting](troubleshooting.md) — update channels, built-in recovery, reporting bugs
+2. [Performance](performance.md) — why Glance stays fast on large repositories, and benchmarks
+3. [Core Workflows](workflows.md) — history, staging, branching, remotes, SSH, diffing, Timeline
+4. [Keyboard Shortcuts](shortcuts.md)
+5. [Troubleshooting](troubleshooting.md) — update channels, built-in recovery, reporting bugs
 
 ## The interface, in one paragraph
 

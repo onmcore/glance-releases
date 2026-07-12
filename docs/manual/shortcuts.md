@@ -8,6 +8,7 @@
 
 | Shortcut | Action | Notes |
 |---|---|---|
+| `Ctrl+P` | Command Palette | Search and run any menu command by name |
 | `Ctrl+F` | Open search | Context-aware: commit log search when browsing history, in-file text search when viewing a file |
 | `Shift+F` | Toggle sidebar | Collapses/expands the sidebar (tab strip stays visible) |
 | `` Ctrl+` `` | Toggle terminal | Opens/closes the embedded terminal panel at the bottom |

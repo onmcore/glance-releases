@@ -20,6 +20,7 @@ A few things run automatically so a bad moment doesn't turn into a lost reposito
 - **Index/HEAD corruption detection and repair** — if `.git`'s index or HEAD ends up in a bad state (e.g. after a crash mid-write), Glance detects and repairs it rather than failing silently
 - **Watcher resilience** — the background file watcher that powers real-time change detection is isolated from crashes and restarts itself if it dies, so the UI doesn't quietly stop updating
 - **[Timeline](workflows.md#timeline)** — if you made a mistake (bad reset, wrong branch delete, etc.), Timeline's reflog view can usually get you back to where you were, even outside what Glance itself tracked
+- **Detached HEAD warning** — checking out a tag or a specific commit (or a rebase that pauses mid-way) leaves HEAD pointing at a commit instead of a branch. Glance shows an amber badge when this happens; click it to create a branch at your current position and get back onto normal footing. Push/pull are disabled while detached, since there's no branch to track
 
 ## Something's still wrong
 
