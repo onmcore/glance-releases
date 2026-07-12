@@ -1,6 +1,6 @@
 # Keyboard Shortcuts
 
-[English](shortcuts.md) | [한글](shortcuts.ko.md)
+[English](shortcuts.md) | [한글](shortcuts.ko.md) | [日本語](shortcuts.ja.md) | [Deutsch](shortcuts.de.md)
 
 > On macOS, `Ctrl` is shown as `⌘` automatically.
 

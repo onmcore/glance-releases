@@ -1,6 +1,6 @@
 # Troubleshooting
 
-[English](troubleshooting.md) | [한글](troubleshooting.ko.md)
+[English](troubleshooting.md) | [한글](troubleshooting.ko.md) | [日本語](troubleshooting.ja.md) | [Deutsch](troubleshooting.de.md)
 
 ## Update channels
 

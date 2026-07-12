@@ -1,6 +1,6 @@
 # 키보드 단축키
 
-[English](shortcuts.md) | [한글](shortcuts.ko.md)
+[English](shortcuts.md) | [한글](shortcuts.ko.md) | [日本語](shortcuts.ja.md) | [Deutsch](shortcuts.de.md)
 
 > macOS에서는 `Ctrl`이 자동으로 `⌘`로 표시됩니다.
 

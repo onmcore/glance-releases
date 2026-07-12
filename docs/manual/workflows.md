@@ -1,6 +1,6 @@
 # Core Workflows
 
-[English](workflows.md) | [한글](workflows.ko.md)
+[English](workflows.md) | [한글](workflows.ko.md) | [日本語](workflows.ja.md) | [Deutsch](workflows.de.md)
 
 ## Browsing history
 

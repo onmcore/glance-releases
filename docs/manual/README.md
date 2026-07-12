@@ -1,6 +1,6 @@
 # Glance Manual
 
-[English](README.md) | [한글](README.ko.md)
+[English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
 ![Glance overview: sidebar, commit graph, and detail panel](assets/screenshots/hero.png)
 

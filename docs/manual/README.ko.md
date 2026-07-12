@@ -1,6 +1,6 @@
 # Glance 매뉴얼
 
-[English](README.md) | [한글](README.ko.md)
+[English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
 ![Glance 전체 개요: 사이드바, 커밋 그래프, 상세 패널](assets/screenshots/hero.png)
 

@@ -1,6 +1,6 @@
 # 시작하기
 
-[English](getting-started.md) | [한글](getting-started.ko.md)
+[English](getting-started.md) | [한글](getting-started.ko.md) | [日本語](getting-started.ja.md) | [Deutsch](getting-started.de.md)
 
 ## 설치
 

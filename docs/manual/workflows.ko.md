@@ -1,6 +1,6 @@
 # 핵심 워크플로우
 
-[English](workflows.md) | [한글](workflows.ko.md)
+[English](workflows.md) | [한글](workflows.ko.md) | [日本語](workflows.ja.md) | [Deutsch](workflows.de.md)
 
 ## 히스토리 보기
 

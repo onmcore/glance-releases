@@ -4,7 +4,7 @@ Windows용 초고성능 Git GUI.
 
 [![Download for Windows](https://img.shields.io/github/v/release/onmcore/glance-releases?label=Download%20for%20Windows&color=2f6feb)](https://github.com/onmcore/glance-releases/releases/latest)
 
-[English](README.md) | [한글](README.ko.md)
+[English](README.md) | [한글](README.ko.md) | [日本語](README.ja.md) | [Deutsch](README.de.md)
 
 ![Glance 개요](docs/manual/assets/screenshots/hero.png)
 

@@ -1,6 +1,6 @@
 # 성능
 
-[English](performance.md) | [한글](performance.ko.md)
+[English](performance.md) | [한글](performance.ko.md) | [日本語](performance.ja.md) | [Deutsch](performance.de.md)
 
 Glance는 대형 저장소에서도 반응성을 잃지 않는다는 목표 하나로 만들어졌습니다.
 

@@ -1,6 +1,6 @@
 # Performance
 
-[English](performance.md) | [한글](performance.ko.md)
+[English](performance.md) | [한글](performance.ko.md) | [日本語](performance.ja.md) | [Deutsch](performance.de.md)
 
 Glance is built around one goal: staying responsive on large repositories.
 

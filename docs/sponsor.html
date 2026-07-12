@@ -152,6 +152,23 @@
     </p>
     <p class="hint">따뜻한 응원 한마디나 바라는 기능이 있다면 언제든 편하게 남겨주세요!</p>
   </div>
+  <div data-lang="ja">
+    <h1>Glance を応援する</h1>
+    <p class="lede">
+      Glance は個人・非商用利用なら無条件で完全に無料で、一人で開発しています。
+      時間の節約になったなら、少しの支援が開発を続ける力になります。
+    </p>
+    <p class="hint">応援のメッセージや欲しい機能があれば、いつでも気軽に残してください！</p>
+  </div>
+  <div data-lang="de">
+    <h1>Glance unterstützen</h1>
+    <p class="lede">
+      Glance ist für den persönlichen und nicht-kommerziellen Gebrauch völlig kostenlos
+      und wird von einer Person entwickelt. Wenn es Ihnen Zeit spart, hilft eine kleine
+      Spende, die aktive Weiterentwicklung zu unterstützen.
+    </p>
+    <p class="hint">Aufmunternde Worte oder Funktionswünsche sind jederzeit willkommen!</p>
+  </div>
 
   <div class="buttons" data-lang="en">
     <a class="btn btn-kofi" href="https://ko-fi.com/glanceapp" target="_blank" rel="noopener noreferrer">
@@ -169,6 +186,22 @@
       ⭐ GitHub에서 스타 주기
     </a>
   </div>
+  <div class="buttons" data-lang="ja">
+    <a class="btn btn-kofi" href="https://ko-fi.com/glanceapp" target="_blank" rel="noopener noreferrer">
+      ☕ Ko-fi で支援する
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/onmcore/glance-releases" target="_blank" rel="noopener noreferrer">
+      ⭐ GitHub でスターを付ける
+    </a>
+  </div>
+  <div class="buttons" data-lang="de">
+    <a class="btn btn-kofi" href="https://ko-fi.com/glanceapp" target="_blank" rel="noopener noreferrer">
+      ☕ Auf Ko-fi unterstützen
+    </a>
+    <a class="btn btn-secondary" href="https://github.com/onmcore/glance-releases" target="_blank" rel="noopener noreferrer">
+      ⭐ Auf GitHub mit Stern versehen
+    </a>
+  </div>
 
   <hr class="divider" />
 
@@ -180,9 +213,19 @@
     후원은 어디까지나 자발적입니다. Glance를 사용해주셔서 감사합니다. 🙌<br />
     <a href="https://github.com/onmcore/glance-releases">← Glance로 돌아가기</a>
   </p>
+  <p class="foot" data-lang="ja">
+    支援はあくまで任意です。Glance をご利用いただきありがとうございます。🙌<br />
+    <a href="https://github.com/onmcore/glance-releases">← Glance に戻る</a>
+  </p>
+  <p class="foot" data-lang="de">
+    Jede Unterstützung ist freiwillig und wird geschätzt. Danke, dass Sie Glance
+    verwenden. 🙌<br />
+    <a href="https://github.com/onmcore/glance-releases">← Zurück zu Glance</a>
+  </p>
 
   <div class="lang-toggle">
-    <a onclick="setLang('en')">English</a> · <a onclick="setLang('ko')">한국어</a>
+    <a onclick="setLang('en')">English</a> · <a onclick="setLang('ko')">한국어</a> ·
+    <a onclick="setLang('ja')">日本語</a> · <a onclick="setLang('de')">Deutsch</a>
   </div>
 </main>
 
@@ -196,7 +239,9 @@
   (function () {
     var saved = null;
     try { saved = localStorage.getItem('glance-sponsor-lang'); } catch (e) {}
-    var lang = saved || (navigator.language && navigator.language.startsWith('ko') ? 'ko' : 'en');
+    var supported = ['en', 'ko', 'ja', 'de'];
+    var browserLang = navigator.language ? navigator.language.slice(0, 2) : 'en';
+    var lang = saved || (supported.indexOf(browserLang) !== -1 ? browserLang : 'en');
     setLang(lang);
   })();
 </script>

@@ -1,6 +1,6 @@
 # 문제 해결
 
-[English](troubleshooting.md) | [한글](troubleshooting.ko.md)
+[English](troubleshooting.md) | [한글](troubleshooting.ko.md) | [日本語](troubleshooting.ja.md) | [Deutsch](troubleshooting.de.md)
 
 ## 업데이트 채널
 
