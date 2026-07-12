@@ -2,6 +2,8 @@
 
 Windows용 초고성능 Git GUI.
 
+[![Download for Windows](https://img.shields.io/github/v/release/onmcore/glance-releases?label=Download%20for%20Windows&color=2f6feb)](https://github.com/onmcore/glance-releases/releases/latest)
+
 [English](README.md) | [한글](README.ko.md)
 
 ![Glance 개요](docs/manual/assets/screenshots/hero.png)
@@ -14,7 +16,7 @@ Glance는 한 가지 집착으로 처음부터 다시 만든 Git GUI입니다 �
 
 Glance는 **개인·비상업적 용도로는 조건 없이 완전히 무료**입니다 — 평가판 타이머 없음, 기능 잠금 없음, 계정 가입 필요 없음.
 
-AI 협업으로 만들고 있습니다.
+혼자 개발하고 있습니다 — 본업은 C++ 게임 개발자인데, 이번엔 Rust·Tauri·Solid.js를 새로 배워가며 AI와 페어링해서 개발하고 있어요.
 
 ### 핵심 특징
 
@@ -48,14 +50,14 @@ Glance가 처음이신가요? [매뉴얼](docs/manual/README.ko.md)에서 시작
 
 ## 후원하기
 
-Glance는 개인·비상업적 용도로는 조건 없이 무료입니다. 도움이 되셨다면 [작은 후원을 고려해주세요](https://onmcore.github.io/glance-releases/sponsor.html) — 어디까지나 선택 사항이며, 늘 감사히 받습니다.
+Glance는 개인·비상업적 용도로는 조건 없이 무료입니다. 도움이 되셨다면 [작은 후원을 고려해주세요](https://onmcore.github.io/glance-releases/sponsor.html) — 어디까지나 선택 사항이며, 꾸준한 개발에 큰 힘이 됩니다.
 
 ## 버그 리포트 & 피드백
 
 - 버그를 발견했다면 [이슈 열기](https://github.com/onmcore/glance-releases/issues/new)
 - 기능 아이디어가 있다면 [디스커션 시작](https://github.com/onmcore/glance-releases/discussions)
 
-모두 읽습니다. 답변은 며칠 걸릴 수 있습니다.
+Glance는 저 혼자 개발하고 있습니다 — 리포트도 전부 제가 직접 읽어요. 그래서 답변까지 하루이틀 걸릴 수 있습니다.
 
 ## 라이센스
 

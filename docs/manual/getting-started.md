@@ -6,6 +6,8 @@
 
 Download the latest installer from the [Releases](../../releases/latest) page and run it. Glance updates itself afterward — no need to manually download future versions unless you want to switch channels (see [Troubleshooting](troubleshooting.md#update-channels)).
 
+Windows will likely show a **"Windows protected your PC"** SmartScreen warning the first time you run the installer. This isn't a sign of anything malicious — Glance just isn't code-signed, since a signing certificate is a recurring cost a free, solo-developed project doesn't have budget for. Click **More info → Run anyway** to continue.
+
 ## Opening a repository
 
 On first launch, Glance shows a **Recent Repositories** list (empty at first) with options to:

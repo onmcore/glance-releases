@@ -2,6 +2,8 @@
 
 Ultra-high-performance Git GUI for Windows.
 
+[![Download for Windows](https://img.shields.io/github/v/release/onmcore/glance-releases?label=Download%20for%20Windows&color=2f6feb)](https://github.com/onmcore/glance-releases/releases/latest)
+
 [English](README.md) | [한글](README.ko.md)
 
 ![Glance overview](docs/manual/assets/screenshots/hero.png)
@@ -14,7 +16,7 @@ Glance is a Git GUI built from scratch with one obsession: **speed**. It stays s
 
 Glance is **completely free for personal & non-commercial use** — no trial timer, no feature lock, no account required.
 
-Built through AI collaboration.
+Built solo — my day job is C++ game development, but I picked up Rust, Tauri, and Solid.js for this one, with a lot of AI pairing along the way.
 
 ### Highlights
 
@@ -48,14 +50,14 @@ New to Glance? The [manual](docs/manual/README.md) covers getting started, core 
 
 ## Support Glance
 
-Glance is free for personal & non-commercial use, with no strings attached. If it's useful to you, [consider a small donation](https://onmcore.github.io/glance-releases/sponsor.html) — entirely optional, always appreciated.
+Glance is free for personal & non-commercial use, with no strings attached. If it's useful to you, [consider a small donation](https://onmcore.github.io/glance-releases/sponsor.html) — entirely optional, and it goes a long way toward keeping development going.
 
 ## Bug reports & feedback
 
 - Found a bug? [Open an issue](https://github.com/onmcore/glance-releases/issues/new)
 - Have a feature idea? [Start a discussion](https://github.com/onmcore/glance-releases/discussions)
 
-I read everything. Replies might take a day or two — solo dev, day job, you know how it goes.
+It's just me behind Glance — I read every report myself, so replies might take a day or two.
 
 ## License
 
