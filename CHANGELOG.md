@@ -23,7 +23,7 @@ smoothly across hundreds of thousands of commits, sub-second status, and checkou
 and resets that touch only the files that actually changed.
 
 ### Repositories & worktrees
-- Open local repositories or clone remotes, with live progress and background multi-clone
+- Open local repositories or clone remotes, with live progress and background multi-clone; URL typo checks, a stall warning, and forceful cancel if a clone gets stuck
 - Recent-repository list with auto-restore, a quick repository switcher, and close/remove
 - Multi-worktree support: inline switching, add/remove, and worktree-aware checkout
 - Automatic detection of external Git CLI changes (branches, tags, config, submodules)
@@ -32,7 +32,7 @@ and resets that touch only the files that actually changed.
 
 ### History & graph
 - Virtualized commit list that stays smooth on very large histories
-- Commit graph with a refs sidebar (branches, remotes, tags), HEAD highlight, and ahead/behind
+- Commit graph with a refs sidebar (branches, remotes, tags), HEAD highlight, and ahead/behind; a first-parent view toggle and a lane-width cap keep merge-heavy histories readable
 - Commit search & filter by message, author, or hash (Ctrl+F)
 - Combined multi-branch history (Incoming / Outgoing) and a stash graph
 - Commit detail panel — info, files, change stats, and diff — with hover preview
@@ -104,7 +104,7 @@ and resets that touch only the files that actually changed.
 - Operation history — step timelines, durations, logs, and live memory usage for every write operation
 
 ### Settings & ecosystem
-- Localization (Korean / English / Japanese, with OS auto-detect) and dark / light theme (OS-linked)
+- Localization (Korean / English / Japanese / German, with OS auto-detect) and dark / light theme (OS-linked)
 - Submodules — list, add, init, update
 - Git config management — view / edit, with per-repository identity override
 - SSH key management — generate Ed25519 / RSA keys, edit ~/.ssh/config hosts, and manage known_hosts (trust new host keys on first use, view/add/remove trusted hosts, in-flow trust prompt with auto-retry when an operation fails on an untrusted host)
