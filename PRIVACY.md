@@ -1,6 +1,6 @@
 # Privacy Policy
 
-_Last updated: 2026-07-11_
+_Last updated: 2026-07-12_
 
 [English](PRIVACY.md) | [한글](PRIVACY.ko.md)
 
@@ -14,19 +14,21 @@ Glance is a Windows desktop application, designed to collect as little as possib
   identify you.
 - **Git version check.** Opening Settings asks GitHub's public API for the latest Git
   version, so Glance can tell you if yours is outdated. No personal data is sent.
-- **Crash reports (Stable and Preview channels only).** If Glance crashes, it
-  automatically sends a diagnostic report to our error-tracking provider,
-  [Sentry](https://sentry.io) (hosted in the United States). A report can include: the
-  error message and stack trace, your OS and app version, a pseudonymous device
-  identifier, and — because Glance is a developer tool — **file paths and Git branch
-  names that were open at the time of the crash**. Your Windows username is removed
-  before sending; other paths and names are not. There is currently no in-app control
-  to turn this off; we are adding one (see "Coming soon" below).
 
 That is the extent of what Glance sends **without you taking an action**.
 
 ## What you can choose to send
 
+- **Crash reports (Stable and Preview channels only).** Glance never sends a crash
+  report automatically — there is no background telemetry and no setting that turns
+  one on. If Glance crashes, or if the app window hits an unexpected error, it always
+  shows a popup asking whether to send a diagnostic report to our error-tracking
+  provider, [Sentry](https://sentry.io) (hosted in the United States), **before**
+  anything is sent. A report can include: the error message and stack trace, your OS
+  and app version, a pseudonymous device identifier, and — because Glance is a
+  developer tool — **file paths and Git branch names that were open at the time**.
+  Your Windows username is removed before sending; other paths and names are not.
+  Declining sends nothing; the next crash asks again independently.
 - **Bug reports.** If you use the in-app "Report a Bug" feature (Help menu, or the
   "Report" button on some error messages), Glance sends what you typed, plus — only if
   you leave the checkboxes on — a recent log excerpt and a screenshot of the app
@@ -54,14 +56,6 @@ itself would — Glance adds no intermediary.
 - **Cloudflare** — proxies bug-report submissions and update checks.
 - **GitHub** — hosts the private repository bug reports are filed to, and its public
   API is queried for the latest Git version.
-
-## Coming soon
-
-We're adding an in-app choice for crash reporting: an explicit opt-in prompt (off by
-default), a Settings toggle, and — even if you keep automatic reporting off — a
-per-crash prompt that asks before sending anything, so you're never sending data for a
-specific crash you haven't agreed to. This document will be updated again when that
-ships.
 
 ## Changes
 
