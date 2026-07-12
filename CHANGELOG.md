@@ -15,6 +15,8 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.0] - 2026-07-12
+
 The first public release of Glance — a high-performance Git GUI for Windows.
 
 Built on gitoxide (pure-Rust Git) and Tauri, Glance is designed to stay fast and
