@@ -24,6 +24,7 @@ Glance는 **개인·비상업적 용도로는 조건 없이 완전히 무료**�
 - **가벼운 메모리** — GB를 먹는 부류가 아닙니다
 - **Tauri 런타임** — Electron급이 아닌 작은 설치본
 - **풍부한 Git 작업** — branch / merge / rebase / stash / cherry-pick / blame / 히스토리 시각화
+- **내장 충돌 해결 & Worktree** — 시각적인 3-way 머지 에디터, 그리고 여러 브랜치를 동시에 작업할 수 있는 네이티브 worktree 지원
 
 ### 이런 분께
 

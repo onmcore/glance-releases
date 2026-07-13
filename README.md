@@ -24,6 +24,7 @@ Built solo — my day job is C++ game development, but I picked up Rust, Tauri, 
 - **Light on memory** — not the gigabyte-hungry kind
 - **Tauri runtime** — small installer, no Electron-sized footprint
 - **Full Git workflow** — branch, merge, rebase, stash, cherry-pick, blame, history visualization
+- **Built-in conflict resolution & worktrees** — a visual three-way merge editor, plus native worktree support for working on multiple branches at once
 
 ### Who it's for
 

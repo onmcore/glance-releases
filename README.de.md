@@ -24,6 +24,7 @@ Entwickelt als Solo-Projekt — mein Hauptjob ist C++-Spieleentwicklung, aber f�
 - **Leicht im Speicherverbrauch** — nicht die gigabyteintensive Sorte
 - **Tauri-Runtime** — kleiner Installer, kein Electron-großer Footprint
 - **Vollständiger Git-Workflow** — Branch, Merge, Rebase, Stash, Cherry-Pick, Blame, Historien-Visualisierung
+- **Integrierte Konfliktlösung & Worktrees** — ein visueller Drei-Wege-Merge-Editor sowie native Worktree-Unterstützung für die gleichzeitige Arbeit an mehreren Branches
 
 ### Für wen es gedacht ist
 
