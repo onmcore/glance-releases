@@ -26,6 +26,10 @@ Release notes management (Model A — single file):
 - Sidebar submodule "update available" badge now stays in sync with the Changes panel
 - "Discard all changes" is now disabled in the branch context menu when there are no changes, matching the Changes panel
 - Update channel badge spacing, and context menu tooltips no longer cover submenu flyouts
+- Push rejected by a server-side hook now shows the actual rejection reason directly in the toast, instead of only in the operation history
+- Changes panel could show stale modified files for up to ~2 minutes after a successful rebase on large repositories; it now clears in seconds
+- Bug report modal no longer stretches to fill the screen when pasted error text contains very long unbroken tokens
+- Submodule log commit menu: actions that would modify the parent repository are now disabled; Compare and Export Patch now correctly target the submodule
 
 ## [0.85.0] - 2026-07-12
 
