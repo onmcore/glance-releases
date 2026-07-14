@@ -15,6 +15,18 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+### Added
+- Fetch results summary toast — shows what came in (new/updated/deleted branches and tags) after a fetch; multiple remotes merge into a single card
+- Toggle to disable decorative animations while keeping progress/status motion (Settings > Appearance)
+
+### Fixed
+- App could hang for minutes and consume excessive memory when an external process rewrote the repository rapidly (e.g. another tool churning HEAD/refs/index); overlapping duplicate reads are now coalesced into a single call
+- Git config viewer now reads system-scope config and includes, so effective values (e.g. autocrlf) display correctly instead of showing "not set"
+- Submodule log: selecting a commit now correctly shows its details, changed files, and diff
+- Sidebar submodule "update available" badge now stays in sync with the Changes panel
+- "Discard all changes" is now disabled in the branch context menu when there are no changes, matching the Changes panel
+- Update channel badge spacing, and context menu tooltips no longer cover submenu flyouts
+
 ## [0.85.0] - 2026-07-12
 
 The first public release of Glance — a high-performance Git GUI for Windows.
