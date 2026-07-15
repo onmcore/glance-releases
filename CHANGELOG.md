@@ -30,6 +30,8 @@ Release notes management (Model A — single file):
 - Changes panel could show stale modified files for up to ~2 minutes after a successful rebase on large repositories; it now clears in seconds
 - Bug report modal no longer stretches to fill the screen when pasted error text contains very long unbroken tokens
 - Submodule log commit menu: actions that would modify the parent repository are now disabled; Compare and Export Patch now correctly target the submodule
+- No longer shows a false "crash reported" prompt for a harmless browser resize-loop warning
+- Files staged by an external tool could vanish from the Changes view for a long time after a checkout that preserved staged changes (e.g. pull/merge fast-forward)
 
 ## [0.85.0] - 2026-07-12
 
