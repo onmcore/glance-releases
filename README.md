@@ -14,17 +14,19 @@ This repository hosts official Glance binary releases and release notes.
 
 Glance is a Git GUI built from scratch with one obsession: **speed**. It stays snappy in repositories with millions of commits and hundreds of thousands of files, while keeping a tiny memory footprint.
 
-Glance is **completely free for personal & non-commercial use** — no trial timer, no feature lock, no account required.
+Glance is **completely free to use right now — personal and commercial alike** — no trial timer, no feature lock, no account required. (A paid commercial license is planned for a future version; it won't affect what you've already got.)
 
 Built solo — my day job is C++ game development, but I picked up Rust, Tauri, and Solid.js for this one, with a lot of AI pairing along the way.
 
 ### Highlights
 
-- **Fast where others stall** — instant response on enterprise-scale monorepos
+- **Fast where others stall** — instant response on enterprise-scale monorepos; see it [in action](docs/manual/performance.md)
 - **Light on memory** — not the gigabyte-hungry kind
 - **Tauri runtime** — small installer, no Electron-sized footprint
 - **Full Git workflow** — branch, merge, rebase, stash, cherry-pick, blame, history visualization
-- **Built-in conflict resolution & worktrees** — a visual three-way merge editor, plus native worktree support for working on multiple branches at once
+- **Built-in conflict resolution** — a visual three-way [Merge Editor](docs/manual/workflows.md#resolving-conflicts) for merges, rebases, and cherry-picks
+- **Native worktrees** — check out another branch into its own folder without disturbing your current one; see [Worktrees](docs/manual/workflows.md#worktrees)
+- **Native Git LFS** — pure-Rust client, no external `git-lfs` binary; batched downloads and inline previews instead of one-file-at-a-time fetches; see [Git LFS](docs/manual/workflows.md#exploring-files)
 
 ### Who it's for
 
@@ -51,7 +53,7 @@ New to Glance? The [manual](docs/manual/README.md) covers getting started, core 
 
 ## Support Glance
 
-Glance is free for personal & non-commercial use, with no strings attached. If it's useful to you, [consider a small donation](https://onmcore.github.io/glance-releases/sponsor.html) — entirely optional, and it goes a long way toward keeping development going.
+Glance is free for everyone right now, commercial use included, with no strings attached. If it's useful to you, [consider a small donation](https://onmcore.github.io/glance-releases/sponsor.html) — entirely optional, and it goes a long way toward keeping development going.
 
 ## Bug reports & feedback
 
@@ -62,7 +64,7 @@ It's just me behind Glance — I read every report myself, so replies might take
 
 ## License
 
-Glance is free for personal & non-commercial use. Voluntary donations are welcome but optional.
+Glance is currently free for everyone, including commercial use — no license key or payment required. Voluntary donations are welcome but optional. A paid commercial license is planned for a future version; it won't change versions already released under this agreement.
 
 Unmodified redistribution is allowed; reverse engineering, modification, and repackaging are not (see [LICENSE](./LICENSE)). No warranty.
 

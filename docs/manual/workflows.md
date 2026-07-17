@@ -117,7 +117,7 @@ The **File Explorer** tab browses the full repository tree (not just changed fil
 
 From a file's context menu you can also view its **history** (every commit that touched it) or its **blame** (line-by-line author/commit annotations).
 
-Files tracked with Git LFS show a badge in the tree and download on demand — beyond having `filter=lfs` set in `.gitattributes`, there's no separate setup.
+Files tracked with Git LFS show a badge in the tree. Glance's LFS support is a native, pure-Rust client — no external `git-lfs` binary required — that converts pointer files and content automatically, downloads missing content in a single batched request on checkout, reset, and discard instead of one file at a time, and previews LFS-tracked images inline on demand, with progress shown for larger transfers. Beyond having `filter=lfs` set in `.gitattributes`, there's no separate setup. If you'd rather route downloads through your own `git-lfs` CLI, that's configurable in Settings too.
 
 ## Timeline
 

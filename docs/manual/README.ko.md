@@ -6,6 +6,16 @@
 
 Glance 사용법을 간단하고 실용적으로 정리한 문서입니다. 다른 Git GUI를 써봤다면 금방 익숙해질 겁니다 — 이 매뉴얼은 주로 "어디에 뭐가 있는지"와 "뭐가 다른지"를 다룹니다.
 
+## 직접 확인해보세요
+
+![머지 에디터 3-way 뷰](assets/screenshots/merge-editor.png)
+
+merge·rebase·cherry-pick 충돌은 시각적인 3-way 에디터에서 처리합니다 — [충돌 해결](workflows.ko.md#충돌-해결) 참고.
+
+![Timeline reflog 피드](assets/screenshots/timeline.png)
+
+눈에 보이는 브랜치 히스토리뿐 아니라, HEAD가 거쳐간 모든 지점을 되돌릴 수 있습니다 — [Timeline](workflows.ko.md#timeline) 참고.
+
 ## 목차
 
 1. [시작하기](getting-started.ko.md) — 설치, 저장소 열기/clone, 인터페이스 둘러보기

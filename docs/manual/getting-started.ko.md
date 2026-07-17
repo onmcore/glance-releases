@@ -19,7 +19,7 @@
 
 SSH로 clone하는데 아직 키를 만들지 않았다면 핵심 워크플로우의 [SSH 설정](workflows.ko.md#ssh-리모트)을 참고하세요.
 
-<!-- TODO: screenshot — Recent Repositories / clone 진입점 -->
+![Recent Repositories 화면 — 저장소 열기·Clone 진입점](assets/screenshots/recent-repos.png)
 
 ## 인터페이스 둘러보기
 

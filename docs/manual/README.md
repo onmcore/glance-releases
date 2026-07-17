@@ -6,6 +6,16 @@
 
 A short, practical guide to using Glance. If you've used any Git GUI before, you'll feel at home in minutes — this manual mostly covers where things live and what's different.
 
+## See it for yourself
+
+![Merge Editor three-way view](assets/screenshots/merge-editor.png)
+
+Conflicts from a merge, rebase, or cherry-pick open a visual three-way editor — see [Resolving conflicts](workflows.md#resolving-conflicts).
+
+![Timeline reflog feed](assets/screenshots/timeline.png)
+
+Every place HEAD has been is recoverable, not just your visible branch history — see [Timeline](workflows.md#timeline).
+
 ## Contents
 
 1. [Getting Started](getting-started.md) — install, open or clone a repo, tour the interface
