@@ -18,6 +18,12 @@ Release notes management (Model A — single file):
 ### Added
 - Fetch results summary toast — shows what came in (new/updated/deleted branches and tags) after a fetch; multiple remotes merge into a single card
 - Toggle to disable decorative animations while keeping progress/status motion (Settings > Appearance)
+- Unified multi-file diff view — see every changed file in one continuous scroll, in both the commit detail's Changed Files tab and the Changes tab; supports line-drag staging in unified and split layouts, separate Staged/Unstaged sections, binary-file size cards, and the encoding/EOL chip
+- Pull now offers to stash uncommitted changes and automatically retry when they'd otherwise block the operation — works with any pull strategy or engine, and restores your changes if the retry still fails
+- "Rescan scheduled" status now shows as a clearer slow spinner instead of an easy-to-miss breathing dot, and appears during more kinds of scan delays
+
+### Changed
+- New app icon
 
 ### Fixed
 - App could hang for minutes and consume excessive memory when an external process rewrote the repository rapidly (e.g. another tool churning HEAD/refs/index); overlapping duplicate reads are now coalesced into a single call
@@ -32,6 +38,9 @@ Release notes management (Model A — single file):
 - Submodule log commit menu: actions that would modify the parent repository are now disabled; Compare and Export Patch now correctly target the submodule
 - No longer shows a false "crash reported" prompt for a harmless browser resize-loop warning
 - Files staged by an external tool could vanish from the Changes view for a long time after a checkout that preserved staged changes (e.g. pull/merge fast-forward)
+- Sync could loop forever retrying pull/push when a push was rejected for a reason pull couldn't actually fix (e.g. a rejected server hook, a duplicate tag); retries are now capped with a safety net
+- Fixed rare cases where Glance would keep rescanning a repository without end when an external tool (e.g. an AI agent) rewrote the repository faster than a scan could finish
+- Fixed newly created files sometimes never appearing in the Changes view when created at the same moment as an external git operation
 
 ## [0.85.0] - 2026-07-12
 
