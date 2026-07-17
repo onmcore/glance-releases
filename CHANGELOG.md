@@ -15,6 +15,8 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.1] - 2026-07-17
+
 ### Added
 - Fetch results summary toast — shows what came in (new/updated/deleted branches and tags) after a fetch; multiple remotes merge into a single card
 - Toggle to disable decorative animations while keeping progress/status motion (Settings > Appearance)
