@@ -15,6 +15,21 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.2] - 2026-07-18
+
+### Added
+- Merge, Cherry-pick, and Revert now run on the gix (pure-Rust) engine by default (previously CLI/libgit2 for some cases) — same behavior, other engines remain selectable per feature in Settings
+- Cherry-pick / Revert now tells you when a commit was already applied or reverted, instead of silently doing nothing
+- Changes panel now updates instantly after stash, commit, merge, cherry-pick, revert, checkout, pull, and hard reset, instead of waiting for the background rescan to catch up
+- "Rescan scheduled" indicator now shows an hourglass with a countdown to when the scan will run
+- Unified diff view (split mode): horizontal scroll for long lines, synced between both sides and pinned to the bottom; click a collapsed gap to expand it
+
+### Fixed
+- Commit list could occasionally get stuck or show a stale "incoming" indicator when many refresh signals arrived in quick succession (e.g. during a merge)
+- Fixed a rare case where newly created files could permanently fail to appear in the Changes view when a background scan overlapped with certain operations
+- Fixed some HEAD movements not being recorded in the reflog, which could make them missing from Timeline
+- Welcome screen now respects the selected UI language, instead of always showing Korean text
+
 ## [0.85.1] - 2026-07-17
 
 ### Added
