@@ -15,6 +15,19 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.3] - 2026-07-19
+
+### Added
+- Unified (multi-file) diff view now supports word-level diff highlighting, per-field CSV coloring, and indent guides — previously only available in the single-file view; word-diff highlight contrast also increased for readability
+
+### Changed
+- In-progress git operation status is now shown entirely inline (branch row, commit detail conflict banner, toolbar hover, sidebar tab) instead of a status chip at the bottom of the window
+- Improved reliability of file-change detection inside Git-ignored folders — changes are no longer missed, and unnecessary background rescans are reduced
+
+### Fixed
+- Changes panel could keep showing an already-reverted or already-committed file as modified; now clears as soon as you view its diff
+- Auto-fetch no longer runs at the same time as a large background scan, avoiding slowdowns
+
 ## [0.85.2] - 2026-07-18
 
 ### Added
