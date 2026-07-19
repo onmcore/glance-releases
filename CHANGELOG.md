@@ -26,6 +26,7 @@ Release notes management (Model A — single file):
 
 ### Fixed
 - Changes panel could keep showing an already-reverted or already-committed file as modified; now clears as soon as you view its diff
+- Committing from outside Glance (another Git client, or an AI coding agent) no longer triggers a slow full rescan or leaves phantom modified files while it catches up
 - Auto-fetch no longer runs at the same time as a large background scan, avoiding slowdowns
 
 ## [0.85.2] - 2026-07-18
