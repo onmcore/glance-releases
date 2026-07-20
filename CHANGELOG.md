@@ -15,6 +15,25 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.4] - 2026-07-21
+
+### Added
+- Worktree tabs — all worktrees now appear as tabs in a global strip below the title bar (create with ＋, delete via right-click), replacing the sidebar worktree selector
+- Secondary (split) window diff tab now uses the unified multi-file view — every changed file in one continuous scroll
+- Changes panel: Staged/Unstaged section headers stay pinned while scrolling and can be collapsed; the view-mode toolbar is pinned to the top
+- Current branch context menu: new "Rebase onto upstream" action
+
+### Changed
+- LFS files are now marked with a compact "LFS" chip instead of a verbose description
+- Commit graph is now incrementally refreshed as refs change, keeping the commit log fast on very actively-committed repositories
+
+### Fixed
+- Performance improvements — eliminated redundant repeated full rescans on very large repositories, and unnecessary stash list re-renders on refresh
+- Operation history log: rapid CLI progress updates (e.g. during a hard reset) no longer collapse into a single line
+- Busy indicators for tag/remote-branch deletion and submodule operations now pulse instead of appearing frozen
+- Reset shows a flowing progress bar when progress is indeterminate, instead of an empty static track
+- Branch operation progress bar pacing corrected — a paused bar could look finished, and the preparing phase moved unrealistically fast
+
 ## [0.85.3] - 2026-07-19
 
 ### Added
