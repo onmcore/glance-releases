@@ -15,6 +15,23 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.85.6] - 2026-07-23
+
+### Added
+- Git LFS file locking — view locks, lock/unlock (including force-unlock) from the file explorer and Changes panel, with lock badges and a "locks only" filter
+- LFS tracking guardrail — large binary files not tracked by LFS are flagged with a badge in the Changes list, with a "track with LFS" action (non-blocking; size threshold and on/off in Settings)
+- Windows taskbar progress — operation progress (checkout, pull, push, …) now shows on the taskbar icon even when the window is minimized or in the background
+- Diff pane file headers now have stage checkboxes synced with the sidebar, and file collapse state survives view switches
+
+### Changed
+- Dark theme retuned to neutral grays for a more consistent look
+- Commit detail: co-author trailers are now highlighted while the original message body is preserved as written
+
+### Fixed
+- Editing .gitignore now takes effect in the Changes view immediately
+- The Changes header discard button now only discards the files currently shown, not files hidden by filtering
+- Performance improvements — fewer redundant full rescans after cherry-pick/revert and during heavy repository churn, and faster reflection of detected changes on very large repositories
+
 ## [0.85.4] - 2026-07-21
 
 ### Added
