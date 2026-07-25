@@ -28,13 +28,16 @@ Hard reset이 잘못됐다면 [Timeline](#timeline)으로 대부분 복구할 �
 
 **Changes** 탭은 워킹 디렉토리 스테이징 영역으로, **Staged** / **Unstaged** / (있는 경우) **Conflicts** 섹션으로 나뉩니다. 변경량이 많을 때 보기 편하도록 Flat / Grouped / Tree 레이아웃을 전환할 수 있습니다.
 
+- diff 패널은 파일을 하나씩 여는 대신 변경된 모든 파일을 하나의 연속된 스크롤로 보여줍니다 — unified/split 레이아웃을 전환할 수 있고, 여러 줄을 드래그해 한 번에 stage/discard할 수 있습니다
 - 파일이나 폴더 체크박스로 stage/unstage — `Ctrl`/`Shift` 다중 선택 지원
-- 파일 전체가 아니라 diff를 열어 개별 hunk나 라인 단위로 stage/discard 가능
-- Discard도 파일 또는 hunk 단위로 가능
+- Discard는 파일·hunk·드래그한 줄 범위 단위로 가능
+- 바이너리 파일은 diff 대신 크기 카드로 표시됩니다
+- 단어 단위 강조로 줄 안에서 정확히 어떤 문자가 바뀌었는지 표시하고, CSV/TSV diff는 열마다 다른 색으로 구분하며, 코드 diff에는 들여쓰기 깊이를 보여주는 인덴트 가이드가 표시됩니다
+- Git LFS로 추적되지 않는 대용량 바이너리 파일에는 배지가 표시되며, 클릭 한 번으로 `.gitattributes`에 추가하는 **Track with LFS** 액션을 제공합니다 — 크기 기준과 이 검사를 켤지 여부는 Settings에서 조정 가능합니다
 - 아래 패널에 커밋 메시지를 쓰고 `Ctrl+Enter`로 제출
 - diff 헤더에 파일의 인코딩(UTF-8, EUC-KR 등)과 줄바꿈(LF/CRLF)이 표시됩니다. Unstaged 워킹 카피 파일은 칩을 클릭해 변환할 수 있습니다
 
-변경 사항은 파일 워처가 실시간으로 감지합니다 — 수동 새로고침 불필요.
+변경 사항은 파일 워처가 실시간으로 감지합니다 — 수동 새로고침 불필요. 이 통합 멀티파일 뷰는 커밋 상세의 **Changes** 탭에서도 동일하게 쓰이므로, 히스토리를 리뷰할 때도 워킹 디렉토리를 볼 때와 같은 방식으로 볼 수 있습니다.
 
 ### 공동 작성자 & 서명
 
@@ -47,14 +50,14 @@ Hard reset이 잘못됐다면 [Timeline](#timeline)으로 대부분 복구할 �
 
 커밋 패널의 **Amend** 토글을 켜면 새 커밋을 만드는 대신 staged 변경사항을 이전 커밋에 합칩니다. 메시지와 작성자가 그 커밋에서 미리 채워지고, Staged 섹션에는 amend될 커밋의 내용이 표시됩니다 — 이미 `HEAD`에 있는 라인은 읽기 전용이며, 파일을 unstage하면 amend 대상에서 빠집니다.
 
-![hunk 단위 스테이징이 보이는 Changes 패널](assets/screenshots/staging.png)
+![멀티파일 diff와 단어 단위 하이라이트가 보이는 Changes 패널](assets/screenshots/staging.png)
 
 ## 브랜치 & 머지
 
-사이드바나 Branch 메뉴에서 브랜치를 생성·체크아웃·이름변경·삭제할 수 있습니다. 체크아웃은 대형 저장소에서 진행률을 보여주며, 실제 변경된 경로만 건드립니다.
+사이드바나 Branch 메뉴에서 브랜치를 생성·체크아웃·이름변경·삭제할 수 있습니다. 체크아웃은 대형 저장소에서 진행률을 보여주며, 실제 변경된 경로만 건드립니다. Windows에서는 checkout, pull, push, rebase, sync 등 오래 걸리는 작업의 진행률이 창을 최소화한 상태에서도 작업 표시줄 아이콘에 표시됩니다.
 
 - **Merge** — 현재 브랜치에 다른 브랜치를 병합 (fast-forward 또는 실제 머지 커밋); 충돌이 있으면 Merge Editor가 열립니다
-- **Rebase onto** — 브랜치나 커밋 위로 rebase — 단계별(체크아웃, 커밋 재생 등) 진행 상황 표시
+- **Rebase onto** — 브랜치나 커밋 위로 rebase — 단계별(체크아웃, 커밋 재생 등) 진행 상황 표시; 브랜치에 upstream이 설정돼 있다면 컨텍스트 메뉴에서 클릭 한 번으로 **Rebase onto upstream**도 가능합니다
 - **Cherry-pick** — 커밋 컨텍스트 메뉴에서 현재 브랜치로 cherry-pick
 - **태그** — 개별 생성·삭제·푸시 가능, annotated 태그 메시지는 인라인으로 확인 가능
 
@@ -76,7 +79,7 @@ Merge, rebase, cherry-pick 중 충돌이 나면 Glance가 **Merge Editor**를 �
 
 ## 리모트 동기화
 
-사이드바에서 리모트를 추가·수정·삭제할 수 있습니다. Fetch는 수동 실행하거나 백그라운드에서 자동 실행됩니다(기본 3분 간격 — Settings에서 조정 가능). Push는 force와 force-with-lease를 지원합니다. Pull은 merge(fast-forward 또는 3-way, 충돌 해결 포함) 또는 rebase 방식을 선택할 수 있습니다.
+사이드바에서 리모트를 추가·수정·삭제할 수 있습니다. Fetch는 수동 실행하거나 백그라운드에서 자동 실행되며(기본 3분 간격 — Settings에서 조정 가능), 새로 들어온 내용을 알려주는 결과 토스트도 표시됩니다 — 새로 생기거나 갱신·삭제된 브랜치와 태그를 여러 리모트 것이라도 카드 하나로 합쳐 보여줍니다. Push는 force와 force-with-lease를 지원합니다. Pull은 merge(fast-forward 또는 3-way, 충돌 해결 포함) 또는 rebase 방식을 선택할 수 있으며, 커밋되지 않은 변경사항이 방해가 될 경우 Glance가 자동으로 stash한 뒤 재시도하고 끝나면 다시 복원해줍니다 — pull 전략이나 엔진과 무관하게 동작하며, 재시도해도 충돌이 남으면 안전하게 되돌립니다.
 
 ### SSH 리모트
 
@@ -93,7 +96,9 @@ SSH 기반 clone/fetch/push를 쓰려면 **Settings → SSH Keys**에서 키를 
 
 ### Worktree
 
-저장소 헤더 우클릭 → **New worktree**로 다른 브랜치를 별도 폴더에 체크아웃할 수 있습니다 — 현재 작업을 건드리지 않고 두 가지를 동시에 진행할 때 유용합니다. 시작 브랜치, 대상 경로, 이름을 지정하세요. 사이드바의 worktree 선택기에서 전환하고, 이름 옆 ×로 삭제할 수 있습니다(현재 있는 worktree는 삭제 불가).
+Worktree는 타이틀 바 아래 스트립에 현재 저장소 옆 탭으로 표시됩니다 — 현재 작업을 건드리지 않고 두 가지를 동시에 진행할 때 유용합니다. **+**를 눌러 추가: 시작 브랜치, 대상 폴더, 이름을 지정하세요(경로는 기본으로 `<폴더>/<브랜치>`이며 생성 전에 수정 가능). 탭을 클릭하면 바로 전환되고, 우클릭하면 삭제할 수 있습니다(현재 있는 worktree는 삭제 불가). 스트립에 다 들어가지 않을 만큼 worktree가 많으면 "+N" 버튼으로 나머지를 볼 수 있습니다.
+
+![타이틀 바 아래 worktree 탭 스트립](assets/screenshots/worktree-tabs.png)
 
 ### Submodule
 
@@ -118,6 +123,10 @@ Submodule은 사이드바에 표시됩니다. 초기화 안 된 항목은 **Init
 파일 컨텍스트 메뉴에서 **history**(그 파일을 건드린 모든 커밋)나 **blame**(라인별 작성자·커밋 주석)도 볼 수 있습니다.
 
 Git LFS로 관리되는 파일은 트리에 배지가 표시됩니다. Glance의 LFS 지원은 순수 Rust로 직접 구현한 네이티브 클라이언트라 별도의 `git-lfs` 바이너리가 필요 없습니다 — 포인터 파일과 실제 콘텐츠 변환을 자동으로 처리하고, checkout·reset·discard 시 없는 콘텐츠를 파일 하나씩이 아니라 한 번에 배치로 다운로드하며, LFS로 관리되는 이미지는 다운로드 전에도 온디맨드로 인라인 미리보기가 가능하고 대용량 전송 시 진행률도 보여줍니다. `.gitattributes`에 `filter=lfs`만 설정돼 있으면 별도 설정은 필요 없습니다. 직접 `git-lfs` CLI로 다운로드를 처리하고 싶다면 Settings에서 그렇게 바꿀 수도 있습니다.
+
+파일 잠금 기능도 내장돼 있습니다: File Explorer나 Changes 패널에서 LFS로 추적되는 파일의 컨텍스트 메뉴로 잠그거나 잠금 해제(다른 사람의 잠금을 강제 해제하는 것도 가능)할 수 있고, 두 목록 모두 잠긴 파일만 걸러볼 수 있습니다. 잠금 배지가 어떤 파일이 현재 잠겨 있는지 보여줍니다.
+
+![LFS 잠금 배지와 Locks Only 필터](assets/screenshots/lfs-locking.png)
 
 ## Timeline
 

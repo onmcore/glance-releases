@@ -22,11 +22,11 @@ Glance는 **지금은 개인·상업적 용도 모두 조건 없이 완전히 �
 
 - **다른 도구가 멈출 때 빠르게** — 엔터프라이즈 규모 모노레포에서 즉각 반응, [직접 확인하기](docs/manual/performance.ko.md)
 - **가벼운 메모리** — GB를 먹는 부류가 아닙니다
-- **Tauri 런타임** — Electron급이 아닌 작은 설치본
+- **Tauri 런타임** — Electron급이 아닌 작은 설치본, Windows 작업 표시줄 진행률 같은 네이티브 디테일까지
 - **풍부한 Git 작업** — branch / merge / rebase / stash / cherry-pick / blame / 히스토리 시각화
 - **내장 충돌 해결** — merge·rebase·cherry-pick 충돌마다 뜨는 시각적인 3-way [머지 에디터](docs/manual/workflows.ko.md#충돌-해결)
-- **네이티브 Worktree** — 현재 작업을 건드리지 않고 다른 브랜치를 별도 폴더에 체크아웃; [Worktree](docs/manual/workflows.ko.md#worktree) 참고
-- **네이티브 Git LFS** — 순수 Rust로 만든 클라이언트라 별도의 `git-lfs` 바이너리가 필요 없음; 파일 하나씩이 아니라 배치로 다운로드하고 인라인 미리보기 지원; [Git LFS](docs/manual/workflows.ko.md#파일-탐색) 참고
+- **네이티브 Worktree, 탭으로** — 현재 작업을 건드리지 않고 다른 브랜치를 별도 폴더에 체크아웃하고, 메뉴를 뒤질 필요 없이 탭 스트립에서 바로 전환; [Worktree](docs/manual/workflows.ko.md#worktree) 참고
+- **네이티브 Git LFS, 파일 잠금까지** — 순수 Rust로 만든 클라이언트라 별도의 `git-lfs` 바이너리가 필요 없음; 파일 하나씩이 아니라 배치로 다운로드하고 인라인 미리보기 지원, 여기에 내장 파일 잠금까지 (대부분의 Git GUI는 잠금을 CLI에 맡김); [Git LFS](docs/manual/workflows.ko.md#파일-탐색) 참고
 
 ### 이런 분께
 

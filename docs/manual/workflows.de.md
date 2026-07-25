@@ -28,13 +28,16 @@ Wenn ein Hard-Reset fehlschlägt, können Sie mit [Timeline](#timeline) normaler
 
 Der Tab **Changes** ist Ihr Staging-Bereich des Arbeitsverzeichnisses, aufgeteilt in **Staged**, **Unstaged** und (falls vorhanden) **Conflicts** Abschnitte. Wechseln Sie zwischen den Layouts Flat, Grouped und Tree, je nachdem, wie Sie eine große Änderungsmenge durchsuchen möchten.
 
+- Das Diff-Panel zeigt jede geänderte Datei in einem kontinuierlichen Scroll statt sie einzeln zu öffnen — schalten Sie zwischen einheitlichen und geteilten Layouts um und ziehen Sie über Zeilen, um einen Bereich auf einmal zu stage oder zu verwerfen
 - Aktivieren Sie ein Kontrollkästchen für eine Datei oder einen Ordner, um sie zu stage/unstage — Kontrollkästchen unterstützen `Ctrl`/`Shift` Mehrfachauswahl
-- Öffnen Sie den Diff einer Datei, um einzelne Hunks oder Zeilen zu stage oder zu verwerfen, nicht nur ganze Dateien
-- Verwerfen ist auf Datei- oder Hunk-Ebene verfügbar
+- Verwerfen ist auf Datei-, Hunk- oder Zeilen-Bereichs-Ebene verfügbar
+- Binärdateien zeigen eine Größenkarte statt eines Diffs
+- Wort-Level-Hervorhebung markiert genau, welche Zeichen sich in einer Zeile geändert haben; CSV/TSV-Diffs färben jede Spalte separat; Einzugsanleitungen markieren Verschachtelungstiefe in Code-Diffs
+- Ein Badge kennzeichnet große Binärdateien, die nicht von Git LFS verfolgt werden, mit einer Aktion **Track with LFS** zum Hinzufügen zu `.gitattributes` (die Größenschwelle und ob diese Überprüfung überhaupt läuft, sind in Settings konfigurierbar)
 - Schreiben Sie Ihre Commit-Nachricht im Panel unten und senden Sie sie mit `Ctrl+Enter` ab
 - Der Diff-Header zeigt die Kodierung jeder Datei (UTF-8, EUC-KR usw.) und Zeilenenden (LF/CRLF) an; für nicht-gestaffelte Arbeitskopie-Dateien können Sie durch Klicken auf einen Chip die Konvertierung durchführen
 
-Änderungen werden von einem File Watcher in Echtzeit erkannt — keine manuelle Aktualisierung erforderlich.
+Änderungen werden von einem File Watcher in Echtzeit erkannt — keine manuelle Aktualisierung erforderlich. Diese einheitliche Multi-Datei-Ansicht wird auch im **Changes**-Tab eines Commits angezeigt, sodass das Überprüfen der Historie genauso funktioniert wie das Überprüfen Ihres Arbeitsverzeichnisses.
 
 ### Co-Autoren und Signierung
 
@@ -47,14 +50,14 @@ Das Zahnradsymbol (⚙) über der Commit-Nachricht ermöglicht:
 
 Aktivieren Sie **Amend** im Commit-Panel, um Ihre gestaffelten Änderungen in den vorherigen Commit zu falten, anstatt einen neuen zu erstellen. Die Nachricht und der Autor werden aus diesem Commit vorgefüllt, und der Abschnitt Staged zeigt, was der geänderte Commit enthält — Zeilen, die bereits in `HEAD` sind, sind schreibgeschützt, und das Unstagen einer Datei entfernt sie aus dem Amend.
 
-![Changes-Panel mit Hunk-Level-Staging](assets/screenshots/staging.png)
+![Changes-Panel mit Multi-Datei-Diff und Wort-Level-Hervorhebung](assets/screenshots/staging.png)
 
 ## Branching & Merging
 
-Erstellen, checken Sie aus, benennen Sie um und löschen Sie Branches aus der Seitenleiste oder dem Branch-Menü. Checkout zeigt den Fortschritt für große Repos und berührt nur die Pfade, die sich tatsächlich geändert haben.
+Erstellen, checken Sie aus, benennen Sie um und löschen Sie Branches aus der Seitenleiste oder dem Branch-Menü. Checkout zeigt den Fortschritt für große Repos und berührt nur die Pfade, die sich tatsächlich geändert haben; unter Windows zeigen langwierige Operationen (Checkout, Pull, Push, Rebase, Sync und mehr) auch den Fortschritt auf dem Taskbar-Icon, auch wenn das Fenster minimiert ist.
 
 - **Merge** einen Branch in den aktuellen (Fast-Forward oder echter Merge-Commit); wenn Konflikte auftreten, wird der Merge Editor geöffnet
-- **Rebase onto** einen Branch oder Commit — der Fortschritt wird phasenweise angezeigt (Checkout, Commit-Replay usw.)
+- **Rebase onto** einen Branch oder Commit — der Fortschritt wird phasenweise angezeigt (Checkout, Commit-Replay usw.); wenn der Branch ein Upstream konfiguriert hat, wird sein Kontextmenü auch eine One-Click-Option **Rebase onto upstream** anbieten
 - **Cherry-pick** einen Commit aus seinem Kontextmenü auf den aktuellen Branch
 - **Tags** können einzeln erstellt, gelöscht und gepusht werden; mit Anmerkungen versehene Tag-Nachrichten sind inline sichtbar
 
@@ -76,7 +79,7 @@ Wenn Sie lieber ein externes Tool verwenden möchten (Beyond Compare, WinMerge, 
 
 ## Remote-Synchronisierung
 
-Fügen Sie Remotes aus der Seitenleiste hinzu, bearbeiten oder entfernen Sie diese. Fetch wird bei Bedarf ausgeführt oder läuft automatisch im Hintergrund (standardmäßig alle 3 Minuten — anpassbar in den Einstellungen). Push unterstützt Force und Force-with-Lease. Pull kann Merge durchführen (Fast-Forward oder Three-Way, mit Konfliktauflösung) oder Rebase.
+Fügen Sie Remotes aus der Seitenleiste hinzu, bearbeiten oder entfernen Sie diese. Fetch wird bei Bedarf ausgeführt oder läuft automatisch im Hintergrund (standardmäßig alle 3 Minuten — anpassbar in den Einstellungen) und zeigt danach einen Ergebnis-Toast — neue, aktualisierte oder gelöschte Branches und Tags, mehrere Remotes zu einer einzigen Karte zusammengefasst. Push unterstützt Force und Force-with-Lease. Pull kann Merge durchführen (Fast-Forward oder Three-Way, mit Konfliktauflösung) oder Rebase; wenn nicht committete Änderungen dabei im Weg stehen, bietet Glance an, sie zu stashen, es erneut zu versuchen und sie danach wiederherzustellen — automatisch, unabhängig von Pull-Strategie oder Engine, mit einem Fallback, falls der erneute Versuch immer noch Konflikte verursacht.
 
 ### SSH-Remotes
 
@@ -93,7 +96,9 @@ Für SSH-basiertes Clone/Fetch/Push richten Sie einen Schlüssel unter **Setting
 
 ### Worktrees
 
-Rechtsklick auf den Repository-Header → **New worktree**, um einen anderen Branch in seinen eigenen Ordner auszuchecken, ohne den aktuellen zu beeinträchtigen — hilfreich, um gleichzeitig an zwei Dingen zu arbeiten. Wählen Sie einen Starting-Branch, einen Zielpath und einen Namen. Wechseln Sie zwischen Worktrees über die Worktree-Auswahl in der Seitenleiste; löschen Sie eine mit dem × neben ihrem Namen (der Worktree, in dem Sie sich derzeit befinden, kann nicht gelöscht werden).
+Worktrees werden als Tabs in einem Strip unterhalb der Titelleiste neben dem aktuellen Repository angezeigt — nützlich, um gleichzeitig an zwei Dingen zu arbeiten, ohne den aktuellen Checkout zu beeinträchtigen. Klicken Sie auf **+** zum Hinzufügen: wählen Sie einen Starting-Branch, einen Zielordner und einen Namen (der Pfad ist standardmäßig `<Ordner>/<Branch>`, kann aber vor der Erstellung bearbeitet werden). Klicken Sie auf einen Tab zum sofortigen Wechsel; Rechtsklick auf einen zum Löschen (der Worktree, in dem Sie sich derzeit befinden, kann nicht gelöscht werden). Wenn mehr Worktrees vorhanden sind als in den Strip passen, zeigt eine Schaltfläche "+N" die restlichen an.
+
+![Worktree-Tab-Strip unterhalb der Titelleiste](assets/screenshots/worktree-tabs.png)
 
 ### Submodules
 
@@ -117,7 +122,11 @@ Der Tab **File Explorer** durchsucht den vollständigen Repository-Baum (nicht n
 
 Aus dem Kontextmenü einer Datei können Sie auch deren **Verlauf** anzeigen (jeden Commit, der sie berührt hat) oder dessen **Blame** (Zeile-für-Zeile Autoren-/Commit-Anmerkungen).
 
-Dateien, die mit Git LFS verfolgt werden, zeigen ein Badge im Baum und werden bei Bedarf heruntergeladen — über die `filter=lfs`-Einstellung in `.gitattributes` ist keine separate Einrichtung erforderlich.
+Dateien, die mit Git LFS verfolgt werden, zeigen ein Badge im Baum. Die LFS-Unterstützung von Glance ist ein nativer, reiner-Rust-Client — kein externer `git-lfs`-Binary erforderlich — der Pointer-Dateien und Inhalte automatisch konvertiert, fehlende Inhalte bei Checkout, Reset und Discard in einer einzigen Batch-Anfrage statt dateiweise herunterlädt und LFS-verwaltete Bilder auf Anfrage inline mit Fortschrittsanzeige für größere Transfers in der Vorschau anzeigt. Abgesehen davon, dass `filter=lfs` in `.gitattributes` gesetzt ist, ist keine separate Einrichtung erforderlich. Falls Sie Downloads lieber über Ihren eigenen `git-lfs`-CLI weitergeben möchten, ist das auch in Settings konfigurierbar.
+
+Die Datei-Sperrung ist ebenfalls integriert: Sperren oder entsperren Sie eine LFS-verwaltete Datei (oder erzwingen Sie die Entsperrung der Sperre einer anderen Person) aus dem Kontextmenü im File Explorer oder im Changes-Panel und filtern Sie beide Listen so, dass nur gesperrte Dateien angezeigt werden. Ein Sperr-Badge zeigt, welche Dateien derzeit gesperrt sind.
+
+![LFS-Sperr-Badge und der Locks-Only-Filter](assets/screenshots/lfs-locking.png)
 
 ## Timeline
 

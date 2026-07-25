@@ -28,13 +28,16 @@ If a hard reset goes wrong, [Timeline](#timeline) can usually get you back.
 
 The **Changes** tab is your working directory staging area, split into **Staged**, **Unstaged**, and **Conflicts** (when present) sections. Switch between Flat, Grouped, and Tree layouts depending on how you like to scan a large changeset.
 
+- The diff panel shows every changed file in one continuous scroll instead of opening them one at a time — toggle between unified and split layouts, and drag across lines to stage or discard a range at once
 - Check a file or folder to stage/unstage it; checkboxes support `Ctrl`/`Shift` multi-select
-- Open a file's diff to stage or discard individual hunks or lines, not just whole files
-- Discard is available at the file or hunk level
+- Discard is available at the file, hunk, or line-range level
+- Binary files show a size card instead of a diff
+- Word-level highlighting marks exactly which characters changed within a line; CSV/TSV diffs color each column separately; indent guides mark nesting depth in code diffs
+- A badge flags large binary files that aren't tracked by Git LFS, with a one-click **Track with LFS** action to add them to `.gitattributes`; the size threshold — and whether this check runs at all — is configurable in Settings
 - Write your commit message in the panel below and submit with `Ctrl+Enter`
 - The diff header shows each file's encoding (UTF-8, EUC-KR, etc.) and line ending (LF/CRLF); for unstaged working-copy files, clicking either chip lets you convert it
 
-Changes are detected in real time by a file watcher — no manual refresh needed.
+Changes are detected in real time by a file watcher — no manual refresh needed. The same unified multi-file view also appears in a commit's **Changes** tab, so reviewing history works the same way as reviewing your working directory.
 
 ### Co-authors and signing
 
@@ -47,14 +50,14 @@ The gear icon (⚙) above the commit message adds:
 
 Toggle **Amend** in the commit panel to fold your staged changes into the previous commit instead of creating a new one. The message and author pre-fill from that commit, and the Staged section shows what the amended commit will contain — lines already in `HEAD` are read-only, and unstaging a file removes it from the amend.
 
-![Changes panel with hunk-level staging](assets/screenshots/staging.png)
+![Changes panel with multi-file diff and word-level highlighting](assets/screenshots/staging.png)
 
 ## Branching & merging
 
-Create, checkout, rename, and delete branches from the sidebar or the Branch menu. Checkout shows progress for large repos and only touches the paths that actually changed.
+Create, checkout, rename, and delete branches from the sidebar or the Branch menu. Checkout shows progress for large repos and only touches the paths that actually changed; on Windows, long-running operations (checkout, pull, push, rebase, sync, and more) also show progress on the taskbar icon, even while the window is minimized.
 
 - **Merge** a branch into the current one (fast-forward or a real merge commit); conflicts, if any, open the Merge Editor
-- **Rebase onto** a branch or commit — progress is shown phase-by-phase (checking out, replaying commits, etc.)
+- **Rebase onto** a branch or commit — progress is shown phase-by-phase (checking out, replaying commits, etc.); if the branch has an upstream configured, its context menu also offers a one-click **Rebase onto upstream**
 - **Cherry-pick** a commit onto the current branch from its context menu
 - **Tags** can be created, deleted, and pushed individually; annotated tag messages are viewable inline
 
@@ -76,7 +79,7 @@ If you'd rather use an external tool (Beyond Compare, WinMerge, KDiff3, and simi
 
 ## Remote sync
 
-Add, edit, or remove remotes from the sidebar. Fetch runs on demand or automatically in the background (default every 3 minutes — adjustable in Settings). Push supports force and force-with-lease. Pull can merge (fast-forward or three-way, with conflict resolution) or rebase.
+Add, edit, or remove remotes from the sidebar. Fetch runs on demand or automatically in the background (default every 3 minutes — adjustable in Settings), and shows a results toast for what came in — new/updated/deleted branches and tags, with multiple remotes merged into a single card. Push supports force and force-with-lease. Pull can merge (fast-forward or three-way, with conflict resolution) or rebase; if uncommitted changes would block it, Glance offers to stash them, retry, and restore them afterward — automatically, regardless of pull strategy or engine, with a fallback if the retry still conflicts.
 
 ### SSH remotes
 
@@ -93,7 +96,9 @@ For SSH-based clone/fetch/push, set up a key under **Settings → SSH Keys**:
 
 ### Worktrees
 
-Right-click the repository header → **New worktree** to check out another branch into its own folder, without disturbing your current one — useful for working on two things at once. Pick a starting branch, a target path, and a name. Switch between worktrees from the sidebar's worktree selector; delete one with the × next to its name (the worktree you're currently in can't be deleted).
+Worktrees appear as tabs in a strip below the title bar, next to the current repository — useful for working on two things at once without disturbing your current checkout. Click **+** to add one: pick a starting branch, a target folder, and a name (the path defaults to `<folder>/<branch>`, editable before creating). Click a tab to switch instantly; right-click one to delete it (the worktree you're currently in can't be deleted). When there are more worktrees than fit in the strip, a "+N" button lists the rest.
+
+![Worktree tab strip below the title bar](assets/screenshots/worktree-tabs.png)
 
 ### Submodules
 
@@ -118,6 +123,10 @@ The **File Explorer** tab browses the full repository tree (not just changed fil
 From a file's context menu you can also view its **history** (every commit that touched it) or its **blame** (line-by-line author/commit annotations).
 
 Files tracked with Git LFS show a badge in the tree. Glance's LFS support is a native, pure-Rust client — no external `git-lfs` binary required — that converts pointer files and content automatically, downloads missing content in a single batched request on checkout, reset, and discard instead of one file at a time, and previews LFS-tracked images inline on demand, with progress shown for larger transfers. Beyond having `filter=lfs` set in `.gitattributes`, there's no separate setup. If you'd rather route downloads through your own `git-lfs` CLI, that's configurable in Settings too.
+
+File locking is built in as well: lock or unlock an LFS-tracked file (or force-unlock someone else's lock) from its context menu in the File Explorer or the Changes panel, and filter either list down to locked files only. A lock badge shows which files are currently locked.
+
+![LFS lock badge and the Locks Only filter](assets/screenshots/lfs-locking.png)
 
 ## Timeline
 

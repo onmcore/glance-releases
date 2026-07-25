@@ -14,17 +14,19 @@ Dieses Repository hostet die offiziellen Glance-Binärreleases und Release Notes
 
 Glance ist eine Git-GUI, die von Grund auf mit einer Obsession entwickelt wurde: **Geschwindigkeit**. Sie bleibt reaktiv in Repositories mit Millionen von Commits und Hunderttausenden von Dateien und behält dabei einen winzigen Speicher-Footprint.
 
-Glance ist **für persönliche und nichtkommerzielle Nutzung vollständig kostenlos** — kein Trial-Timer, keine Funktionssperrung, keine Kontoerstellung erforderlich.
+Glance ist **jetzt vollständig kostenlos für alle — persönliche und kommerzielle Nutzung gleichermaßen** — kein Trial-Timer, keine Funktionssperrung, keine Kontoerstellung erforderlich. (Eine bezahlte kommerzielle Lizenz ist für eine zukünftige Version geplant; sie wird nicht beeinflussen, was Sie bereits haben.)
 
 Entwickelt als Solo-Projekt — mein Hauptjob ist C++-Spieleentwicklung, aber für dieses Projekt habe ich Rust, Tauri und Solid.js gelernt und mit viel AI-Pairing entwickelt.
 
 ### Highlights
 
-- **Schnell, wo andere stottern** — sofortige Reaktion bei Enterprise-Scale-Monorepos
+- **Schnell, wo andere stottern** — sofortige Reaktion bei Enterprise-Scale-Monorepos; [in Aktion sehen](docs/manual/performance.de.md)
 - **Leicht im Speicherverbrauch** — nicht die gigabyteintensive Sorte
-- **Tauri-Runtime** — kleiner Installer, kein Electron-großer Footprint
+- **Tauri-Runtime** — kleiner Installer, kein Electron-großer Footprint, mit nativen Besonderheiten wie Windows-Taskleisten-Fortschritt bei langwierigen Operationen
 - **Vollständiger Git-Workflow** — Branch, Merge, Rebase, Stash, Cherry-Pick, Blame, Historien-Visualisierung
-- **Integrierte Konfliktlösung & Worktrees** — ein visueller Drei-Wege-Merge-Editor sowie native Worktree-Unterstützung für die gleichzeitige Arbeit an mehreren Branches
+- **Integrierte Konfliktlösung** — ein visueller Drei-Wege-[Merge Editor](docs/manual/workflows.de.md#konflikte-lösen) für Merges, Rebases und Cherry-Picks
+- **Native Worktrees als Tabs** — checken Sie einen anderen Branch in seinen eigenen Ordner aus, ohne den aktuellen zu beeinträchtigen, und wechseln Sie mit einem Tab-Strip statt durch ein Menü zu graben; siehe [Worktrees](docs/manual/workflows.de.md#worktrees)
+- **Natives Git LFS mit Datei-Sperrung** — reiner Rust-Client, kein externer `git-lfs`-Binary erforderlich; Batch-Downloads und Inline-Vorschau statt einzeln, plus eingebaute Datei-Sperrung (die meisten Git GUIs überlassen das dem CLI); siehe [Git LFS](docs/manual/workflows.de.md#dateien-erkunden)
 
 ### Für wen es gedacht ist
 
@@ -51,7 +53,7 @@ Neu bei Glance? Das [Handbuch](docs/manual/README.de.md) behandelt die ersten Sc
 
 ## Glance unterstützen
 
-Glance ist für persönliche und nichtkommerzielle Nutzung vollständig kostenlos. Wenn es für Sie nützlich ist, [erwägen Sie eine kleine Spende](https://onmcore.github.io/glance-releases/sponsor.html) — völlig optional und ein großer Beitrag zur Fortsetzung der Entwicklung.
+Glance ist jetzt für alle kostenlos, auch für kommerzielle Nutzung — ohne Lizenzschlüssel oder Zahlung erforderlich. Freiwillige Spenden sind willkommen, aber völlig optional. Eine bezahlte kommerzielle Lizenz ist für eine zukünftige Version geplant; sie wird bereits unter dieser Vereinbarung veröffentlichte Versionen nicht ändern.
 
 ## Fehlerberichte & Feedback
 
@@ -62,7 +64,7 @@ Glance wird nur von mir entwickelt — ich lese jeden Bericht persönlich, daher
 
 ## Lizenz
 
-Glance ist für persönliche und nichtkommerzielle Nutzung kostenlos nutzbar. Freiwillige Spenden sind willkommen, aber optional.
+Glance ist jetzt für alle kostenlos verwendbar, einschließlich kommerzieller Nutzung — kein Lizenzschlüssel oder Zahlung erforderlich. Freiwillige Spenden sind willkommen, aber optional. Eine bezahlte kommerzielle Lizenz ist für eine zukünftige Version geplant; sie wird Versionen, die bereits unter dieser Vereinbarung veröffentlicht wurden, nicht ändern.
 
 Unmodifizierte Weiterverbreitung ist erlaubt; Reverse-Engineering, Modifikation und Umpaketierung sind nicht erlaubt (siehe [LICENSE](./LICENSE)). Keine Gewährleistung.
 
