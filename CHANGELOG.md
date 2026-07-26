@@ -15,6 +15,18 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+### Added
+- Interactive rebase — reorder, reword, squash, fixup, or drop commits from a modal with drag-and-drop, then run the plan; available from a commit's context menu, a branch's context menu, or by dragging a commit in the log
+- LFS store analysis & cleanup — see local Git LFS storage usage broken down by folder and extension, classified as in-use / retained / old versions / unreferenced, and clean up unreferenced or superseded objects that are safely backed up remotely (including per-folder cleanup); a remote fetch runs automatically first so "backed up" status is current
+- Code font selection — choose the font used for code and diffs independently of the general UI font, with a searchable picker and live preview
+- Code font size — adjust code/diff text size independently of the overall UI zoom
+
+### Fixed
+- LFS file locking could fail with an authentication error when locking or unlocking a file
+- The LFS locks list could show a single lock duplicated many times over
+- Branch/tag labels on a commit could appear duplicated
+- Performance improvements — file-change detection no longer temporarily slows to full rescans right after a Git operation completes
+
 ## [0.85.6] - 2026-07-23
 
 ### Added
