@@ -15,6 +15,8 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.0] - 2026-07-27
+
 ### Added
 - Interactive rebase — reorder, reword, squash, fixup, or drop commits from a modal with drag-and-drop, then run the plan; available from a commit's context menu, a branch's context menu, or by dragging a commit in the log
 - LFS store analysis & cleanup — see local Git LFS storage usage broken down by folder and extension, classified as in-use / retained / old versions / unreferenced, and clean up unreferenced or superseded objects that are safely backed up remotely (including per-folder cleanup); a remote fetch runs automatically first so "backed up" status is current
