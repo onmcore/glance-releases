@@ -25,8 +25,9 @@ Entwickelt als Solo-Projekt — mein Hauptjob ist C++-Spieleentwicklung, aber f�
 - **Tauri-Runtime** — kleiner Installer, kein Electron-großer Footprint, mit nativen Besonderheiten wie Windows-Taskleisten-Fortschritt bei langwierigen Operationen
 - **Vollständiger Git-Workflow** — Branch, Merge, Rebase, Stash, Cherry-Pick, Blame, Historien-Visualisierung
 - **Integrierte Konfliktlösung** — ein visueller Drei-Wege-[Merge Editor](docs/manual/workflows.de.md#konflikte-lösen) für Merges, Rebases und Cherry-Picks
+- **Interactive Rebase, kein Terminal nötig** — Commits direkt im Verlauf per Drag neu anordnen oder squashen, oder in einem dedizierten Editor pick/reword/fixup/drop; siehe [Interactive Rebase](docs/manual/workflows.de.md#interactive-rebase)
 - **Native Worktrees als Tabs** — checken Sie einen anderen Branch in seinen eigenen Ordner aus, ohne den aktuellen zu beeinträchtigen, und wechseln Sie mit einem Tab-Strip statt durch ein Menü zu graben; siehe [Worktrees](docs/manual/workflows.de.md#worktrees)
-- **Natives Git LFS mit Datei-Sperrung** — reiner Rust-Client, kein externer `git-lfs`-Binary erforderlich; Batch-Downloads und Inline-Vorschau statt einzeln, plus eingebaute Datei-Sperrung (die meisten Git GUIs überlassen das dem CLI); siehe [Git LFS](docs/manual/workflows.de.md#dateien-erkunden)
+- **Natives Git LFS mit Datei-Sperrung** — reiner Rust-Client, kein externer `git-lfs`-Binary erforderlich; Batch-Downloads und Inline-Vorschau, plus eingebaute Datei-Sperrung und eine [visuelle Speicheranalyse mit One-Click-Bereinigung](docs/manual/workflows.de.md#lfs-speicherbereinigung), die genau zeigt, wo Ihr Speicherplatz geblieben ist (die meisten Git GUIs überlassen beides dem CLI); siehe [Git LFS](docs/manual/workflows.de.md#dateien-erkunden)
 
 ### Für wen es gedacht ist
 

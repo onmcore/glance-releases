@@ -61,6 +61,24 @@ Hard reset이 잘못됐다면 [Timeline](#timeline)으로 대부분 복구할 �
 - **Cherry-pick** — 커밋 컨텍스트 메뉴에서 현재 브랜치로 cherry-pick
 - **태그** — 개별 생성·삭제·푸시 가능, annotated 태그 메시지는 인라인으로 확인 가능
 
+### Interactive Rebase
+
+커밋을 우클릭 → **Edit history from this commit**(또는 브랜치 우클릭 → **Interactive Rebase…**로 해당 브랜치 위로 rebase하면서 동시에 편집)를 선택하면, 그 위에 있는 커밋들을 재정렬·병합·편집한 뒤 다시 적용할 수 있는 목록이 열립니다. 로그에서 커밋을 직접 드래그하는 것도 가능합니다 — 다른 행의 가장자리에 놓으면 재정렬, 가운데에 놓으면 아래 행으로 squash됩니다.
+
+각 커밋마다 다음 중 선택할 수 있습니다:
+
+- **Pick** — 그대로 유지
+- **Reword** — 변경 내용은 유지하고 메시지만 수정
+- **Squash** — 이전 커밋과 합치고 두 메시지를 병합
+- **Fixup** — 이전 커밋과 합치고 이 커밋의 메시지는 버림
+- **Drop** — 커밋을 완전히 제거
+
+행을 드래그해 재정렬하거나(또는 행에 포커스를 준 뒤 `Alt+↑`/`Alt+↓`), 계획을 아직 열어둔 상태에서는 undo/redo(`Ctrl+Z` / `Ctrl+Y`)도 가능합니다. 재적용 중 충돌이 나면 평소와 같은 충돌 해결 흐름으로 처리됩니다 — 그 상태에서 계속하거나 중단할 수 있습니다.
+
+아직 지원하지 않는 것들도 있습니다: rebase 도중 커밋 내용 직접 편집, 커스텀 명령 실행, 저장소의 맨 첫 커밋 rebase, `fixup!`/`squash!` 커밋 자동 병합, 하위 브랜치 업데이트. 연결된 worktree에서는 사용할 수 없으며, rebase 범위는 최대 1,000개 커밋으로 제한됩니다.
+
+![드래그로 재정렬하고 squash로 묶인 Interactive Rebase 에디터](assets/screenshots/interactive-rebase.png)
+
 ### Stash
 
 Branch 메뉴의 **Stash Changes...**로 커밋되지 않은 변경사항을 보관하며, staged 변경을 워킹 트리에 남겨둘지 선택할 수 있습니다. Stash는 사이드바의 Stashes 섹션과 커밋 그래프에 표시됩니다. 각 stash는 다음을 지원합니다:
@@ -108,9 +126,21 @@ Submodule은 사이드바에 표시됩니다. 초기화 안 된 항목은 **Init
 
 공유 리모트 없이 변경사항을 주고받으려면, 커밋 우클릭(또는 범위 드래그 선택) → **Export as patch**를 쓰세요. 나중에 Repository 메뉴의 **Apply patch**로 적용합니다. 이건 `git am`보다는 `git apply`에 가깝습니다 — 워킹 트리만 갱신하므로, stage와 commit은 직접 해야 합니다.
 
+### LFS 저장공간 정리
+
+저장소가 Git LFS를 사용한다면, **LFS** 메뉴에서 **LFS Storage**가 열려 LFS가 로컬에 저장하고 있는 모든 것을 분석해 보여줍니다: 현재 체크아웃에서 참조 중인 **In use**, 어떤 브랜치나 태그에서는 참조하지만 현재 체크아웃은 아닌 **Retained**, 히스토리를 통해서는 여전히 도달 가능하지만 이미 대체된 **Old versions**, 아무 데서도 가리키지 않는 **Orphan**으로 나뉜 차트와, 용량이 큰 폴더·확장자별 표가 함께 표시됩니다.
+
+폴더 행의 **Clean** 버튼(또는 전체 Orphan 항목은 헤더 버튼)을 누르면 얼마나 확보될지 미리 보여주고, 확인하면 실행됩니다. 이건 단순한 화면 필터가 아니라 실제로 오래된 로컬 LFS 파일을 영구히 삭제하는 작업입니다 — Glance가 먼저 리모트에서 fetch해서 리모트에 백업되지 않은 것은 삭제하지 않도록 하고, 여전히 도달 가능한 항목은 최소 한 벌은 항상 남겨둡니다. 나중에 오래된 버전이 다시 필요해지면, 다른 누락된 LFS 콘텐츠와 마찬가지로 리모트에서 다시 다운로드됩니다.
+
+![tier·폴더별로 나뉜 LFS Storage 분석](assets/screenshots/lfs-store.png)
+
 ### Diff 알고리즘
 
 특정 diff가 예상과 다르게 보인다면, **Settings → Editor**에서 diff 알고리즘을 Histogram(기본) / Myers / Minimal 중에서 바꿀 수 있습니다.
+
+### 코드 폰트
+
+**Settings → Appearance**에서 설치된 시스템 폰트 중 코드·diff용 고정폭 폰트를 실시간 미리보기와 함께 고를 수 있고, 크기(Small/Normal/Large/XL)는 앱 전체 UI 배율과 무관하게 따로 설정할 수 있습니다 — 버튼이나 메뉴는 그대로 두고 코드만 읽기 편하게 키울 수 있습니다.
 
 ## 두 ref 비교
 

@@ -61,6 +61,24 @@ Create, checkout, rename, and delete branches from the sidebar or the Branch men
 - **Cherry-pick** a commit onto the current branch from its context menu
 - **Tags** can be created, deleted, and pushed individually; annotated tag messages are viewable inline
 
+### Interactive rebase
+
+Right-click a commit → **Edit history from this commit** (or a branch → **Interactive Rebase…**, which rebases onto that branch while editing) to open a list of the commits above it that you can reorder, combine, or edit before they're replayed. You can also drag a commit directly in the log — drop it on the edge of another row to reorder, or in the middle to squash it into the row below.
+
+For each commit, choose:
+
+- **Pick** — keep as-is
+- **Reword** — keep the changes, edit the message
+- **Squash** — combine into the previous commit, merging both messages
+- **Fixup** — combine into the previous commit, discarding this one's message
+- **Drop** — remove the commit entirely
+
+Drag rows to reorder them (or use `Alt+↑`/`Alt+↓` with a row focused), and undo/redo (`Ctrl+Z` / `Ctrl+Y`) while the plan is still open. If replaying hits a conflict, the usual conflict-resolution flow handles it — continue or abort from there.
+
+A few things it doesn't do yet: editing a commit's contents mid-rebase, running custom commands, rebasing the repository's very first commit, auto-squashing `fixup!`/`squash!` commits, or updating dependent branches. It's also not available in a linked worktree, and a rebase range is capped at 1,000 commits.
+
+![Interactive Rebase editor with drag-to-reorder and squash grouping](assets/screenshots/interactive-rebase.png)
+
 ### Stashing
 
 Stash uncommitted changes from the Branch menu (**Stash Changes...**), optionally keeping staged changes in the working tree. Stashes appear in the sidebar's Stashes section and in the commit graph. Each stash supports:
@@ -108,9 +126,21 @@ Submodules show up in the sidebar. Uninitialized ones have an **Init** button; i
 
 For sharing changes without a shared remote, right-click a commit (or drag-select a range) → **Export as patch**. Apply one later via the Repository menu's **Apply patch**. Note this is closer to `git apply` than `git am` — it updates your working tree, so you'll still stage and commit the result yourself.
 
+### LFS storage cleanup
+
+If the repository uses Git LFS, the **LFS** menu opens **LFS Storage** — a breakdown of everything LFS has stored locally: a chart split into **In use** (referenced by your current checkout), **Retained** (referenced by some branch or tag, but not your checkout), **Old versions** (superseded content still reachable through history), and **Orphan** (not referenced by anything) — plus tables of the largest folders and file extensions.
+
+Click **Clean** on a folder row (or the header button, for everything orphaned) to preview what would be freed, then confirm. This is a real, permanent delete of old local LFS files, not just a display filter — Glance fetches from your remotes first so it won't delete something that isn't backed up there, and always keeps at least one copy of anything still reachable. If you ever need an old version again, it's re-downloaded from the remote like any other missing LFS content.
+
+![LFS Storage breakdown by tier and folder](assets/screenshots/lfs-store.png)
+
 ### Diff algorithm
 
 If a particular diff doesn't render the way you expect, **Settings → Editor** lets you switch the diff algorithm between Histogram (default), Myers, and Minimal.
+
+### Code font
+
+**Settings → Appearance** lets you pick a monospace font for code and diffs from your installed system fonts, with a live preview, and set its size (Small/Normal/Large/XL) independently of the app's overall UI scale — so code stays readable without blowing up buttons and menus.
 
 ## Comparing refs
 

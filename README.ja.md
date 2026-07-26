@@ -25,8 +25,9 @@ Glance は**今すぐ個人・商用問わず完全に無料**で使えます �
 - **Tauri ランタイム** — 小さいインストーラ、Electron 並みのフットプリントではなく、Windows タスクバーの進行状況表示など、ネイティブなディテールまで
 - **完全な Git ワークフロー** — branch、merge、rebase、stash、cherry-pick、blame、履歴可視化
 - **組み込みの競合解決** — merge・rebase・cherry-pick 中の競合に対応する、ビジュアルな 3-way [マージエディタ](docs/manual/workflows.ja.md#競合を解決)
+- **Interactive Rebase、ターミナル不要** — 履歴ログでドラッグして並べ替え・squash、または専用エディタで pick/reword/fixup/drop; [Interactive Rebase](docs/manual/workflows.ja.md#interactive-rebase) を参照
 - **ネイティブな Worktree（タブ形式）** — 現在のブランチに影響を与えずに別のブランチを独立したフォルダにチェックアウトでき、メニューをもぐることなくタブストリップで切り替え可能 — [Worktrees](docs/manual/workflows.ja.md#ワークツリー) を参照
-- **ネイティブな Git LFS（ファイルロック機能付き）** — 純 Rust クライアント、外部の `git-lfs` バイナリ不要 — ファイル単位ではなくバッチ処理でダウンロードしてインラインプレビューもサポート、さらに組み込みファイルロック機能（ほとんどの Git GUI はロックを CLI に任せている） — [Git LFS](docs/manual/workflows.ja.md#ファイルを探索) を参照
+- **ネイティブな Git LFS（ファイルロック機能付き）** — 純 Rust クライアント、外部の `git-lfs` バイナリ不要 — ファイル単位ではなくバッチ処理でダウンロードしてインラインプレビューもサポート、さらに組み込みファイルロック機能と、容量がどこに消えたか一目でわかる[ストレージ分析・ワンクリック整理](docs/manual/workflows.ja.md#lfs-ストレージ整理)も付属（ほとんどの Git GUI はロックも整理も CLI に任せている） — [Git LFS](docs/manual/workflows.ja.md#ファイルを探索) を参照
 
 ### こんな人向け
 

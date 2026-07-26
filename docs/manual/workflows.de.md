@@ -61,6 +61,24 @@ Erstellen, checken Sie aus, benennen Sie um und löschen Sie Branches aus der Se
 - **Cherry-pick** einen Commit aus seinem Kontextmenü auf den aktuellen Branch
 - **Tags** können einzeln erstellt, gelöscht und gepusht werden; mit Anmerkungen versehene Tag-Nachrichten sind inline sichtbar
 
+### Interactive Rebase
+
+Rechtsklick auf einen Commit → **Edit history from this commit** (oder auf einen Branch → **Interactive Rebase…**, was Rebase auf dem Branch durchführt und gleichzeitig Bearbeitung erlaubt) öffnet eine Liste der darüber liegenden Commits, die Sie neu anordnen, kombinieren oder vor dem Replay bearbeiten können. Sie können auch einen Commit direkt im Log ziehen — legen Sie ihn auf den Rand einer anderen Zeile, um ihn neu anzuordnen, oder in die Mitte, um ihn in die darunter liegende Zeile zu squashen.
+
+Für jeden Commit wählen Sie:
+
+- **Pick** — behält es unverändert
+- **Reword** — behält die Änderungen, bearbeitet die Nachricht
+- **Squash** — kombiniert mit dem vorherigen Commit und führt beide Nachrichten zusammen
+- **Fixup** — kombiniert mit dem vorherigen Commit und verwirft diese Nachricht
+- **Drop** — entfernt den Commit vollständig
+
+Ziehen Sie Zeilen zum Neu anordnen (oder verwenden Sie `Alt+↑`/`Alt+↓` mit fokussierter Zeile), und Undo/Redo (`Ctrl+Z` / `Ctrl+Y`) sind verfügbar, während der Plan noch offen ist. Wenn beim Replay ein Konflikt auftritt, ist es der gewöhnliche Konfliktlösungsablauf — Sie können von dort fortfahren oder abbrechen.
+
+Einige Dinge, die noch nicht unterstützt werden: Bearbeitung des Inhalts eines Commits während des Rebase, Ausführung benutzerdefinierter Befehle, Rebase des allerersten Commits des Repositorys, Auto-Squashing von `fixup!`/`squash!`-Commits oder Update abhängiger Branches. Dies ist auch nicht in einem verknüpften Worktree verfügbar, und ein Rebase-Bereich ist auf 1.000 Commits begrenzt.
+
+![Interactive-Rebase-Editor mit Drag-Neuordnung und Squash-Gruppierung](assets/screenshots/interactive-rebase.png)
+
 ### Stashing
 
 Lagern Sie unverdrahtete Änderungen vom Branch-Menü (**Stash Changes...**) ein, optional mit Beibehaltung von gestaffelten Änderungen im Arbeitsbaum. Stashes erscheinen im Abschnitt Stashes der Seitenleiste und im Commit-Graphen. Jeder Stash unterstützt:
@@ -108,9 +126,21 @@ Submodule werden in der Seitenleiste angezeigt. Nicht initialisierte haben einen
 
 Um Änderungen ohne gemeinsames Remote freizugeben, rechtsklicken Sie auf einen Commit (oder ziehen Sie einen Bereich aus) → **Export as patch**. Wenden Sie einen später über das Menü **Apply patch** des Repository-Menüs an. Beachten Sie, dass dies näher an `git apply` als an `git am` liegt — es aktualisiert Ihren Arbeitsbaum, daher müssen Sie das Ergebnis selbst stagieren und committen.
 
+### LFS-Speicherbereinigung
+
+Falls das Repository Git LFS nutzt, öffnet das Menü **LFS** die Ansicht **LFS Storage** — eine Übersicht von allem, was LFS lokal gespeichert hat: ein Diagramm aufgeteilt in **In use** (von Ihrem aktuellen Checkout referenziert), **Retained** (von einer Branch oder einem Tag referenziert, aber nicht von Ihrem aktuellen Checkout), **Old versions** (alte Inhalte, die durch die Historie noch erreichbar sind) und **Orphan** (nichts verweist darauf) — plus Tabellen der größten Ordner und Dateitypen.
+
+Klicken Sie auf **Clean** in einer Ordnerzeile (oder den Header-Button für alles Orphan), um eine Vorschau zu sehen, was freigegeben würde, dann bestätigen Sie. Dies ist ein echter, permanenter Löschvorgang alter lokaler LFS-Dateien, kein Anzeigefilter — Glance fetcht zuerst von Ihren Remotes, damit keine ungesicherten Dateien gelöscht werden, und behält immer mindestens eine Kopie von allem Erreichbaren. Falls Sie jemals eine alte Version benötigen, wird diese wie jeder andere fehlende LFS-Inhalt vom Remote neu heruntergeladen.
+
+![LFS-Storage-Übersicht nach Tier und Ordner](assets/screenshots/lfs-store.png)
+
 ### Diff-Algorithmus
 
 Wenn ein bestimmter Diff nicht wie erwartet dargestellt wird, können Sie mit **Settings → Editor** den Diff-Algorithmus zwischen Histogram (Standard), Myers und Minimal wechseln.
+
+### Code-Schriftart
+
+**Settings → Appearance** ermöglicht es Ihnen, eine Monospace-Schriftart für Code und Diffs aus Ihren installierten Systemschriften auszuwählen, mit Livevorschau, und deren Größe (Small/Normal/Large/XL) unabhängig von der Gesamt-UI-Skalierung einzustellen — damit Code lesbar bleibt, ohne Buttons und Menüs zu vergrößern.
 
 ## Refs vergleichen
 

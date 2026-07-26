@@ -25,8 +25,9 @@ Built solo — my day job is C++ game development, but I picked up Rust, Tauri, 
 - **Tauri runtime** — small installer, no Electron-sized footprint, with native touches like Windows taskbar progress on long-running operations
 - **Full Git workflow** — branch, merge, rebase, stash, cherry-pick, blame, history visualization
 - **Built-in conflict resolution** — a visual three-way [Merge Editor](docs/manual/workflows.md#resolving-conflicts) for merges, rebases, and cherry-picks
+- **Interactive rebase, no terminal needed** — drag to reorder or squash commits right in the log, or use pick/reword/fixup/drop from a dedicated editor; see [Interactive rebase](docs/manual/workflows.md#interactive-rebase)
 - **Native worktrees, as tabs** — check out another branch into its own folder without disturbing your current one, and switch between them from a tab strip instead of digging through a menu; see [Worktrees](docs/manual/workflows.md#worktrees)
-- **Native Git LFS, locking included** — pure-Rust client, no external `git-lfs` binary; batched downloads and inline previews instead of one-file-at-a-time fetches, plus built-in file locking (most Git GUIs leave that to the CLI); see [Git LFS](docs/manual/workflows.md#exploring-files)
+- **Native Git LFS, locking included** — pure-Rust client, no external `git-lfs` binary; batched downloads and inline previews, plus built-in file locking and a [visual storage breakdown with one-click cleanup](docs/manual/workflows.md#lfs-storage-cleanup) that shows exactly where your space went (most Git GUIs leave both to the CLI); see [Git LFS](docs/manual/workflows.md#exploring-files)
 
 ### Who it's for
 
