@@ -27,6 +27,8 @@ Release notes management (Model A — single file):
 - LFS file locking could fail with an authentication error when locking or unlocking a file
 - The LFS locks list could show a single lock duplicated many times over
 - Branch/tag labels on a commit could appear duplicated
+- Rapidly clicking between branches on a large repository could make the commit log hang for minutes while memory usage spiked, and a related background retry loop could fire continuously
+- Soft and mixed reset now also update the Changes panel instantly
 - Performance improvements — file-change detection no longer temporarily slows to full rescans right after a Git operation completes
 
 ## [0.85.6] - 2026-07-23
