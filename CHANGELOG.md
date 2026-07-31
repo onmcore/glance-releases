@@ -15,6 +15,22 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.1] - 2026-07-31
+
+### Added
+- CSV/TSV diffs are now table-aware — cell-level change highlighting,
+  column-aligned layout, a pinned header row, and (in the unified view)
+  folding of unchanged columns
+- The unified diff view now marks the file currently selected in the sidebar
+
+### Changed
+- LFS store analysis shows real progress percentages and no longer blocks
+  push/commit while it runs
+
+### Fixed
+- Various fixes across staging, file-change watching, merge/cherry-pick/revert,
+  and sync
+
 ## [0.86.0] - 2026-07-27
 
 ### Added
