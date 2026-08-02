@@ -15,6 +15,34 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.2] - 2026-08-03
+
+### Added
+- GitHub/GitLab integration — link accounts via device flow, personal access
+  token, or a self-hosted instance; browse PR/MR lists and details with CI
+  check status and file diffs; switch accounts per repository from the
+  sidebar chip
+- Personal access token setup now opens the provider's token page with the
+  name and required scopes pre-filled
+- (Beta) Submit PR/MR reviews — approve, request changes, or comment — and
+  follow the activity timeline
+
+### Changed
+- LFS store analysis is much faster and now resumes incrementally instead
+  of re-scanning your entire history on every fetch
+- Blame now uses the built-in gix engine by default
+- Enumerating LFS objects to upload on push is faster
+- LFS cleanup analysis reuses cached results instead of re-walking history
+  on every recompute
+
+### Fixed
+- LFS store analysis results could disappear after a full scan completed,
+  or when switching between repositories
+- Blame could attribute lines to the commit that renamed a file instead of
+  the commit that actually changed them
+- The push dialog's set-upstream toggle stayed disabled after the upstream
+  branch was deleted on the remote
+
 ## [0.86.1] - 2026-07-31
 
 ### Added
