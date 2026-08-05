@@ -15,6 +15,29 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.3] - 2026-08-06
+
+### Added
+- Merge conflict forecast — a badge on branches and log labels shows
+  whether merging into the default branch would conflict, kept live
+  automatically
+- Conflict prevention radar — warns in the Changes list and commit panel
+  when a file you're editing was also changed on a teammate's recently
+  active branch
+- Pull request review status is now shown in the PR header strip and as
+  review cards (approvals, pending reviewers)
+- Inline PR comments — read and write line-level comments on diff lines,
+  reply to threads, resolve/unresolve, and edit or delete your own
+  comments
+
+### Fixed
+- Switching repositories could leave the previous repository's Changes
+  list showing until the new one finished scanning
+- The repository list popup could stop responding to clicks
+- The forge account setup's "verified" message could show the wrong
+  provider after switching services; GitLab personal access token
+  creation now also pre-fills the description field
+
 ## [0.86.2] - 2026-08-03
 
 ### Added
