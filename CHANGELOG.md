@@ -15,6 +15,49 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.4] - 2026-08-09
+
+### Added
+- Sign in to GitLab directly from your browser (no personal access token needed)
+- Create and merge pull/merge requests from within Glance, with a confirmation
+  step and provider-aware handling of "delete source branch"
+- PR/MR lists, CI checks, and inline comments now refresh automatically on a
+  configurable interval (or manually), instead of only when you open the tab
+- Rate-limit errors from GitHub/GitLab now show a clear message and recovery
+  time instead of being mistaken for access-denied errors
+- Inline PR comment threads that no longer match the current diff now also
+  appear in the Review tab feed, with the original code snippet for context
+- LFS upload size is now estimated and shown before you push
+- The Merge Editor shows a conflicted file's size and whether it's an LFS
+  pointer before you start resolving it
+- An "Update branch" button appears on PRs that are behind their target
+  branch, and the Approve button is now a promoted, always-visible action
+- @mentions in PR/MR comments are rendered as links, and emoji shortcodes
+  render as emoji
+- Commit author avatars now fall back to your GitHub/GitLab profile photo
+  when no Gravatar is available
+- PR/MR mentions and review requests now show up in the notification center
+- Unity `.meta` sidecar files are now checked for missing/orphaned pairs,
+  shown as a badge in the Changes list
+
+### Changed
+- Conflict radar's binary-file detection now distinguishes definite, probable,
+  and unknown cases instead of treating all binary-like files the same
+
+### Fixed
+- LFS quota-exceeded errors were reported as generic failures instead of the
+  actual reason
+- Comparing two refs with a very large number of changed files could freeze
+  the UI
+- The sidebar's ahead/behind counts could stay stuck at pre-push values after
+  pushing
+- Opening a row's details in the Op History timeline could crash the panel
+- The Continue/Abort buttons for an in-progress operation could get stuck
+  permanently disabled
+- Repos with a custom Git merge driver configured could get conflict markers
+  merged into files, or silently incorrect results, during merge, pull,
+  rebase, cherry-pick, revert, or stash
+
 ## [0.86.3] - 2026-08-06
 
 ### Added
