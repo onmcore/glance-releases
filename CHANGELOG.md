@@ -15,6 +15,37 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.5] - 2026-08-15
+
+### Added
+- Image diffs now support a before/after comparison view (swipe or onion-skin
+  overlay) for changed image files
+- PR/MR mentions and review requests now also show as OS notifications, in
+  addition to the in-app notification center
+
+### Changed
+- Full scans on large repositories are faster, using file-watcher-verified
+  state to skip redundant disk checks
+- GitLab merge requests that need a rebase now reflect that in the merge and
+  "update branch" button states
+
+### Fixed
+- Notifications for PR/MR mentions and review requests could reappear
+  repeatedly, or dump a backlog of old notifications right after signing in
+- Commit search by hash required an exact 7-character prefix; longer or
+  full-length hashes now match too
+- Switching commits quickly in the diff view could leave a file stuck
+  showing "modified" with no visible changes
+- Very large repositories could run out of memory during a full scan
+- The reviewer avatar in inline PR comment cards could overflow the card
+  width
+- Unity `.meta` pair integrity checks could misfire in some cases (missed
+  real issues or flagged false positives)
+- Viewing a local branch with no upstream could show an incomplete commit
+  graph, without a visible point where it diverged from the default branch
+- Inline PR comment code snippets ignored your diff view's font size and
+  color settings
+
 ## [0.86.4] - 2026-08-09
 
 ### Added
