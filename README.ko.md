@@ -24,10 +24,14 @@ Glance는 **지금은 개인·상업적 용도 모두 조건 없이 완전히 �
 - **가벼운 메모리** — GB를 먹는 부류가 아닙니다
 - **Tauri 런타임** — Electron급이 아닌 작은 설치본, Windows 작업 표시줄 진행률 같은 네이티브 디테일까지
 - **풍부한 Git 작업** — branch / merge / rebase / stash / cherry-pick / blame / 히스토리 시각화
+- **GitHub·GitLab 내장** — 로그인(GitHub는 Device Flow, GitLab는 브라우저에서 바로, self-hosted는 토큰) 후 Glance를 벗어나지 않고 PR/MR을 탐색·리뷰·머지 — 인라인 코멘트, 승인, CI 상태, 백그라운드 자동 새로고침까지; [Pull requests](docs/manual/workflows.ko.md#pull-requests) 참고
+- **한 번에 전체 변경 검토** — 파일을 하나씩 열 필요 없이 변경된 모든 파일이 한 스크롤에 표시되고, 단어 단위 하이라이트와 unified/split 레이아웃 지원; [스테이징 & 커밋](docs/manual/workflows.ko.md#스테이징--커밋) 참고
+- **머지하기 전에 미리 안다** — 브랜치를 머지하면 충돌이 날지 실시간 배지로 보여주고, 지금 편집 중인 파일이 동료 브랜치에서도 바뀌었으면 커밋 전에 레이더가 경고; [충돌 예보 & 레이더](docs/manual/workflows.ko.md#충돌-예보--레이더) 참고
 - **내장 충돌 해결** — merge·rebase·cherry-pick 충돌마다 뜨는 시각적인 3-way [머지 에디터](docs/manual/workflows.ko.md#충돌-해결)
 - **터미널 없는 Interactive Rebase** — 로그에서 바로 드래그해 재정렬하거나 squash, 또는 전용 에디터에서 pick/reword/fixup/drop; [Interactive Rebase](docs/manual/workflows.ko.md#interactive-rebase) 참고
 - **네이티브 Worktree, 탭으로** — 현재 작업을 건드리지 않고 다른 브랜치를 별도 폴더에 체크아웃하고, 메뉴를 뒤질 필요 없이 탭 스트립에서 바로 전환; [Worktree](docs/manual/workflows.ko.md#worktree) 참고
 - **네이티브 Git LFS, 파일 잠금까지** — 순수 Rust로 만든 클라이언트라 별도의 `git-lfs` 바이너리가 필요 없음; 파일 하나씩이 아니라 배치로 다운로드하고 인라인 미리보기 지원, 여기에 내장 파일 잠금과 [용량이 어디로 갔는지 한눈에 보여주는 저장공간 분석·원클릭 정리](docs/manual/workflows.ko.md#lfs-저장공간-정리)까지 (대부분의 Git GUI는 둘 다 CLI에 맡김); [Git LFS](docs/manual/workflows.ko.md#파일-탐색) 참고
+- **바로 비교되는 이미지 diff** — 옛 이미지와 새 이미지를 스와이프하거나 onion-skin으로 겹쳐 비교 (밋밋한 미리보기 두 장 대신)
 
 ### 이런 분께
 

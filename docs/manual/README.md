@@ -20,7 +20,7 @@ Every place HEAD has been is recoverable, not just your visible branch history �
 
 1. [Getting Started](getting-started.md) — install, open or clone a repo, tour the interface
 2. [Performance](performance.md) — why Glance stays fast on large repositories, and benchmarks
-3. [Core Workflows](workflows.md) — history, staging, branching, remotes, SSH, diffing, Timeline
+3. [Core Workflows](workflows.md) — history, staging, branching, remotes, SSH, pull requests, diffing, Timeline
 4. [Keyboard Shortcuts](shortcuts.md)
 5. [Troubleshooting](troubleshooting.md) — update channels, built-in recovery, reporting bugs
 

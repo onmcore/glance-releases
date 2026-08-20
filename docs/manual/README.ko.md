@@ -20,7 +20,7 @@ merge·rebase·cherry-pick 충돌은 시각적인 3-way 에디터에서 처리�
 
 1. [시작하기](getting-started.ko.md) — 설치, 저장소 열기/clone, 인터페이스 둘러보기
 2. [성능](performance.ko.md) — Glance가 대형 저장소에서도 빠른 이유와 벤치마크
-3. [핵심 워크플로우](workflows.ko.md) — 히스토리, 스테이징, 브랜치, 리모트, SSH, diff, Timeline
+3. [핵심 워크플로우](workflows.ko.md) — 히스토리, 스테이징, 브랜치, 리모트, SSH, PR/MR, diff, Timeline
 4. [단축키](shortcuts.ko.md)
 5. [문제 해결](troubleshooting.ko.md) — 업데이트 채널, 내장 복구 기능, 버그 리포트
 

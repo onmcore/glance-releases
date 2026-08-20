@@ -24,10 +24,14 @@ Built solo — my day job is C++ game development, but I picked up Rust, Tauri, 
 - **Light on memory** — not the gigabyte-hungry kind
 - **Tauri runtime** — small installer, no Electron-sized footprint, with native touches like Windows taskbar progress on long-running operations
 - **Full Git workflow** — branch, merge, rebase, stash, cherry-pick, blame, history visualization
+- **GitHub & GitLab, built in** — sign in (GitHub device flow, GitLab straight from your browser, or a token for self-hosted), then browse, review, and merge pull/merge requests without leaving Glance: inline line comments, approvals, CI status, and background refresh; see [Pull requests](docs/manual/workflows.md#pull-requests)
+- **Review every change at once** — every changed file in one continuous scroll instead of clicking through them one by one, with word-level highlighting and unified/split layouts; see [Staging & committing](docs/manual/workflows.md#staging--committing)
+- **Know before you merge** — a live badge shows whether merging a branch would conflict, and a radar warns before you commit if a file you're editing was also changed on a teammate's branch; see [Conflict forecast & radar](docs/manual/workflows.md#conflict-forecast--radar)
 - **Built-in conflict resolution** — a visual three-way [Merge Editor](docs/manual/workflows.md#resolving-conflicts) for merges, rebases, and cherry-picks
 - **Interactive rebase, no terminal needed** — drag to reorder or squash commits right in the log, or use pick/reword/fixup/drop from a dedicated editor; see [Interactive rebase](docs/manual/workflows.md#interactive-rebase)
 - **Native worktrees, as tabs** — check out another branch into its own folder without disturbing your current one, and switch between them from a tab strip instead of digging through a menu; see [Worktrees](docs/manual/workflows.md#worktrees)
 - **Native Git LFS, locking included** — pure-Rust client, no external `git-lfs` binary; batched downloads and inline previews, plus built-in file locking and a [visual storage breakdown with one-click cleanup](docs/manual/workflows.md#lfs-storage-cleanup) that shows exactly where your space went (most Git GUIs leave both to the CLI); see [Git LFS](docs/manual/workflows.md#exploring-files)
+- **Image diffs you can actually compare** — swipe or onion-skin blend between old and new, instead of two flat previews
 
 ### Who it's for
 

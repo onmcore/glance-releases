@@ -31,7 +31,7 @@ The **Changes** tab is your working directory staging area, split into **Staged*
 - The diff panel shows every changed file in one continuous scroll instead of opening them one at a time — toggle between unified and split layouts, and drag across lines to stage or discard a range at once
 - Check a file or folder to stage/unstage it; checkboxes support `Ctrl`/`Shift` multi-select
 - Discard is available at the file, hunk, or line-range level
-- Binary files show a size card instead of a diff
+- Binary files show a size card instead of a diff; changed image files get a before/after view instead — swipe between old and new, or blend them with an onion-skin slider
 - Word-level highlighting marks exactly which characters changed within a line; CSV/TSV diffs color each column separately; indent guides mark nesting depth in code diffs
 - A badge flags large binary files that aren't tracked by Git LFS, with a one-click **Track with LFS** action to add them to `.gitattributes`; the size threshold — and whether this check runs at all — is configurable in Settings
 - Write your commit message in the panel below and submit with `Ctrl+Enter`
@@ -87,6 +87,15 @@ Stash uncommitted changes from the Branch menu (**Stash Changes...**), optionall
 - **Apply** — apply but keep the stash
 - **Drop** — delete without applying
 
+### Conflict forecast & radar
+
+Two features that flag trouble before you're in the middle of it:
+
+- **Conflict forecast** — a badge on each branch (and in the log's ref labels) shows whether merging it into the default branch would conflict, computed in the background and kept live as branches move. Click it to open the [Review view](#review-view) on exactly what would clash.
+- **Conflict radar** — while you have uncommitted changes, a warning appears in the Changes list and commit panel if a file you're editing was also changed on a teammate's recently active remote branch — before you commit, not after you've already pushed into a mess.
+
+Neither one blocks anything; they're early warnings, not gates.
+
 ### Resolving conflicts
 
 Whenever a merge, rebase, or cherry-pick hits a conflict, Glance opens the **Merge Editor** — a three-way view (Ours / Base / Theirs) with `[` / `]` to jump between conflicts. Resolve, then continue or abort the operation from the same view.
@@ -109,6 +118,36 @@ For SSH-based clone/fetch/push, set up a key under **Settings → SSH Keys**:
 4. The first time you connect to a new host, Glance prompts you to trust its SSH host key (TOFU) under **Known hosts** — same idea as `ssh`'s first-connection prompt
 
 ![SSH Keys settings section](assets/screenshots/ssh-keys.png)
+
+## Pull requests
+
+Connect a GitHub or GitLab account under **Settings → Integrations** to browse, review, and merge pull/merge requests without leaving Glance.
+
+### Connecting an account
+
+- **GitHub** — sign in with device flow (no token to copy and paste), or use a personal access token
+- **GitLab** — sign in straight from your browser, no token needed, or use a personal access token for self-hosted instances
+- Self-hosted GitHub Enterprise and GitLab instances are supported — Glance detects the provider automatically from the host you enter
+- Multiple accounts on the same host are supported, and each repository remembers which one to use
+
+### Browsing & reviewing
+
+The **PR/MR** tab lists open pull/merge requests for the current repository, with CI check status, and refreshes on an interval you choose (or manually, or not at all).
+
+- Open a PR to see its description, commits, CI checks, and full file diff, rendered with the same diff viewer used everywhere else in Glance
+- Comment directly on a diff line, reply to threads, resolve or unresolve them, and edit or delete your own comments; a thread that no longer matches the current diff still shows up in the Review tab feed, with the original code snippet for context
+- Submit a review — approve, request changes, or leave a general comment — from the Review tab; review status (who approved, who's still pending) shows in the PR header without opening the tab
+- @mentions render as links and emoji shortcodes render as emoji in PR/MR comments
+
+### Creating & merging
+
+- Open a new PR from the **+** button at the top of the PR/MR tab — source and target branches default to your current branch and the remote's default branch
+- Merge from the PR header with a single confirmation step; Glance handles "delete source branch" correctly for each provider, and won't try to delete a branch the server already removed for you
+- An **Update branch** button appears once a PR has fallen behind its target
+
+### Staying current
+
+Mentions and review requests show up in Glance's notification center, and — if you'd like — as a native Windows toast too.
 
 ## Advanced
 
@@ -142,9 +181,15 @@ If a particular diff doesn't render the way you expect, **Settings → Editor** 
 
 **Settings → Appearance** lets you pick a monospace font for code and diffs from your installed system fonts, with a live preview, and set its size (Small/Normal/Large/XL) independently of the app's overall UI scale — so code stays readable without blowing up buttons and menus.
 
-## Comparing refs
+## Review view
 
-Right-click any commit, branch, or tag for **Compare** — view the file-level diff between two arbitrary refs, independent of your current checkout. Toggle between two-dot (`a..b`) and three-dot (`a...b`, merge-base) comparison, and swap sides.
+The **Review** tab reviews any range as one continuous diff, independent of your current checkout — pick a range from the header chip:
+
+- **Uncommitted changes** or **unpushed commits** — reviews against your upstream (falling back to the remote's default branch, or nothing checked out at all)
+- **Two commits** — pick a base and target from the picker, which lists branches, tags, and your last 100 commits; or `Shift`-click two commits directly in the log
+- A file list in the sidebar mirrors what you're reviewing, and a large file count still gets the same 10,000-file cap and path filter as before, with a chip to lift it
+
+This replaces the old right-click **Compare** command — same idea, broader range picker, and it now shares the same continuous-scroll diff view as staging instead of opening files one at a time.
 
 ## Exploring files
 
