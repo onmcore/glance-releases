@@ -15,6 +15,22 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.86.6] - 2026-08-21
+
+### Added
+- Review view — pick any range (your uncommitted changes, unpushed commits,
+  or two arbitrary commits) and see it as one continuous diff, with a
+  commit-range picker right in the log
+- A banner appears when your Git configuration has disabled untracked-file
+  scanning, so new files don't silently disappear from the Changes list
+
+### Changed
+- The right-click "Compare" view has been replaced by the more capable
+  Review view — same idea, a broader range picker, and it now shares the
+  same continuous-scroll diff view as staging
+- Large repositories use noticeably less peak memory during full scans and
+  background conflict-forecast checks
+
 ## [0.86.5] - 2026-08-15
 
 ### Added
