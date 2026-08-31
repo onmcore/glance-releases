@@ -15,6 +15,26 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.87.0] - 2026-08-31
+
+### Added
+- Blame your working copy — right-click a file in Changes to blame it exactly
+  as it is on disk, with uncommitted lines marked as such
+
+### Changed
+- Branches and tags in the sidebar are now sorted by most recent commit
+- The PR/MR merge dialog asks "Squash commits?" as a single toggle when merge
+  and squash are the only options (GitLab), instead of a segmented control
+- Scanning for untracked files in large repositories is much faster
+- Commit details now cap the file list at 10,000 files (with a truncated
+  indicator) — huge merge commits could previously freeze the app
+
+### Fixed
+- The commit list could permanently stop loading more commits while scrolling
+- Selecting a local branch left the commit list at the top instead of
+  scrolling to that branch's latest commit
+- Binary and LFS badges disappeared from collapsed files in the Review view
+
 ## [0.86.6] - 2026-08-21
 
 ### Added
