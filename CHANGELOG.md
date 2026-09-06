@@ -15,6 +15,37 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.87.1] - 2026-09-06
+
+### Added
+- Cherry-pick a range of commits at once — pick "just this commit" or "from
+  here to there", with conflict skip and options to pick onto a branch other
+  than the one you're on
+- Settings now shows a diagnostic card recommending Git config changes for
+  very large repositories
+
+### Changed
+- Commit search returns results much faster in large repositories
+
+### Fixed
+- Git configuration changes (like disabling untracked-file scanning) now
+  take effect immediately instead of requiring you to reopen the repository
+- Cherry-pick could get stuck in an unresolvable state when there were
+  unrelated uncommitted changes in the working copy
+- Push and other operations that don't touch the working copy no longer
+  trigger a full, slow rescan afterward
+- Deleting a branch could leave the commit list stuck on "Loading commits"
+  in large repositories
+- Adding/removing a remote or a worktree no longer triggers a full, slow
+  rescan afterward
+- Editing branch tracking, remotes, or the push default no longer risks
+  corrupting your `.git/config` if the app is interrupted mid-write
+- Reduced app slowdowns and unresponsiveness right after startup in large
+  repositories
+- Checkout, commit, and merge no longer pause noticeably on large
+  repositories using Git LFS
+- Fixed a rare crash under very low system memory
+
 ## [0.87.0] - 2026-08-31
 
 ### Added
