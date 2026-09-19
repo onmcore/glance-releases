@@ -15,6 +15,44 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.87.2] - 2026-09-20
+
+### Added
+- Cherry-pick a range of commits onto a branch you don't have checked out —
+  the cherry-pick dialog now lets you choose the range, the target branch,
+  and options in one place
+- Force a status rescan with F5 (also in the Repository menu) when a change
+  is not picked up automatically
+
+### Changed
+- Merge forecast for a tracking branch with incoming upstream changes now
+  predicts the pull ("will pulling upstream conflict?") instead of always
+  the merge into the default branch
+- Faster status updates, commit details, and file previews in large
+  repositories, with lower memory use
+
+### Fixed
+- Sparse checkout repositories: excluded files were shown as deleted,
+  "Stage All" could stage them as deletions, and the index repair banner
+  kept reappearing. Working-copy operations (checkout, merge, reset, stash,
+  pull, rebase, cherry-pick, revert) are now delegated to Git so they no
+  longer restore excluded files or fail, and committing in a sparse-index
+  repository no longer writes a broken tree
+- The cherry-pick dialog on a detached HEAD defaulted to another branch;
+  it now applies to HEAD like the context menu does
+- Merge forecast badges could linger after the branch's base or upstream
+  was gone
+- Inline spinners on "Stage All" and stash rows no longer drift across
+  the row
+- File changes could go undetected: a continuously written file (e.g. a
+  log directory) kept resetting the change debounce so status never
+  refreshed, and edits inside a nested repository (such as a worktree
+  inside the main repository) were attributed to the outer repository
+- Continuous writes to an untracked file no longer trigger a full index
+  re-read every few seconds in large repositories
+- Updated the TLS library (rustls) to fix a security vulnerability
+  (RUSTSEC-2026-0285) in HTTPS connections used for Git LFS and updates
+
 ## [0.87.1] - 2026-09-06
 
 ### Added
