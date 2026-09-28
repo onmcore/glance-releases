@@ -15,6 +15,35 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.88.0] - 2026-09-28
+
+### Added
+- Fixup commits: pick an earlier commit as the commit target to create a
+  `fixup!`/`amend!`/`squash!` commit (HEAD still amends). The log shows a
+  banner to fold pending fixups in via the interactive rebase editor, with
+  autosquash pre-filled
+- Commit onto another branch: commit your staged changes to a different
+  (or new) branch without checking it out — your working copy stays as is
+- Cherry-pick dependency check: before cherry-picking a single commit,
+  Glance checks whether it would conflict and, if so, shows which earlier
+  commits it most likely depends on
+
+### Fixed
+- Line endings: staging a file whose committed copy already uses CRLF no
+  longer rewrites every line; files with only `eol=lf`/`eol=crlf` in
+  `.gitattributes` are now normalized like Git does; resolving a conflict
+  manually keeps the repository's CRLF convention
+- LFS store cleanup could treat files checked out in another worktree as
+  unreferenced
+- Stash pop/apply/drop now refuses to act if the stash list was changed
+  outside Glance, instead of acting on the wrong stash
+- Git LFS file locking now honors proxy and SSL settings
+- Opening the diff or blame of a very large file no longer loads the whole
+  file into memory; a failed diff shows an error instead of spinning forever
+- Commit details dropped the line right after the subject when there was no
+  blank line between subject and body
+- GitHub compare links broke for branch names containing `#`, `%` or `+`
+
 ## [0.87.2] - 2026-09-20
 
 ### Added
