@@ -15,6 +15,32 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.89.0] - 2026-10-18
+
+### Added
+- A banner now explains why remotes and upstreams are missing when a
+  repository folder is owned by another Windows user (and how to fix it)
+
+### Changed
+- Faster startup and lower memory use, especially in large repositories:
+  lighter startup bundle, smoother commit list scrolling, and lower memory
+  peaks for file history, merge forecast and background checks
+- Previewing a file larger than 64 MB shows its size instead of loading it
+- Glance frees most of its graphics memory while the window is minimized
+
+### Fixed
+- Ahead/behind counts and commit distances were wrong for branches that
+  contain merge commits
+- Timeline actions (including undo) froze the window while running
+- After switching the theme from Auto to a fixed theme, an OS theme change
+  could still override it
+- Pending merge/revert commit messages were not picked up in linked worktrees
+- The multi-file diff could show stale content after files were refreshed
+- File history could come back incomplete when two windows loaded history for
+  different files of the same repository at once
+- A failure to list amend files showed an empty Staged list instead of an
+  error
+
 ## [0.88.0] - 2026-09-28
 
 ### Added
