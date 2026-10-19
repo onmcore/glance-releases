@@ -15,6 +15,51 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+## [0.89.1] - 2026-10-20
+
+### Changed
+- File lists in Changes, commit details and the combined diff view are now
+  sorted by name, and the diff view follows the same order as the list
+- Very large diffs are capped so the app stays responsive
+
+### Fixed
+- Stage All no longer stages ignored files inside new folders or the
+  contents of nested repositories, and now honors the global excludes file
+  and `info/exclude` in linked worktrees
+- Merge, cherry-pick and revert no longer overwrite staged changes; they
+  stop with an explanation instead
+- Committing while conflicts are still unresolved is now refused
+- Resolving or discarding a conflict, restoring a file from a commit and
+  unstaging keep the file's executable bit
+- Re-selecting the same conflicted file in the merge editor no longer
+  throws away resolution edits in progress
+- Switching repositories clears the branch tree, remotes, stashes,
+  worktrees and submodules right away instead of briefly showing the
+  previous repository's, and late results no longer land in the wrong one
+- Cherry-picking onto a branch that is not checked out now signs the commit
+  when SSH commit signing is enabled, and refuses when GPG signing is required
+- Reset no longer leaves a pending multi-commit cherry-pick behind
+- Restoring, unstaging or discarding no longer deletes a file when the
+  commit it comes from cannot be read
+- Some failed operations no longer stay stuck as "in progress"
+- Changes to tracked files under ignored folders are detected again
+- Cancelling a Git LFS download no longer hangs, and an interrupted download
+  can no longer leave a damaged file in the LFS store
+- LFS store cleanup never deletes objects that are only staged, and skips
+  cleanup when the index cannot be read
+- Merging a pull request from a fork no longer deletes a same-named branch
+  in your repository
+- Editing SSH config refuses files it cannot read safely instead of
+  overwriting them
+- Dialogs no longer close when a drag that started inside ends outside, and
+  Esc closes dialogs consistently
+- Remaining untranslated labels are now translated
+
+### Security
+- A repository's `.lfsconfig` can no longer change proxy or TLS
+  verification settings for Git LFS transfers
+- Credentials embedded in remote URLs are removed from logs and crash reports
+
 ## [0.89.0] - 2026-10-18
 
 ### Added
