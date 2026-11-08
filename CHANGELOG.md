@@ -23,7 +23,12 @@ Release notes management (Model A — single file):
   is available
 - Review guidelines: a repository `.glance/review.md` and personal
   guidelines in Settings are applied to every AI review
-- AI review settings for the CLI path, model and a per-run cost limit
+- AI review settings for the CLI path, model and an optional per-run cost
+  limit (no limit by default)
+- The Claude Code CLI is found automatically, including the one bundled
+  with the Claude Code extension for VS Code, Cursor or Windsurf
+- AI reviews check the surrounding code before reporting, rank findings
+  by severity and use your commit messages to understand the intent
 
 ### Changed
 - Updated the Git engine (gitoxide 0.90), the SSH library and other
