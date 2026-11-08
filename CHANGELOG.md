@@ -15,6 +15,25 @@ Release notes management (Model A — single file):
 
 ## [Unreleased]
 
+### Added
+- AI review: review your local changes or a pull/merge request with your own
+  Claude Code CLI and see the findings as inline comments in the diff
+- AI review drafts can be edited or dropped before posting, and are posted
+  together as comments, never as an approval; an automatic posting mode
+  is available
+- Review guidelines: a repository `.glance/review.md` and personal
+  guidelines in Settings are applied to every AI review
+- AI review settings for the CLI path, model and a per-run cost limit
+
+### Changed
+- Updated the Git engine (gitoxide 0.90), the SSH library and other
+  third-party libraries
+
+### Fixed
+- GitLab inline comments on unchanged lines in the split view no longer fail
+- A GitLab inline comment is refused instead of landing on the wrong line
+  when the merge request was updated after you opened it
+
 ## [0.89.1] - 2026-10-20
 
 ### Changed
